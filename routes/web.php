@@ -1,4 +1,8 @@
-<?php use Illuminate\Support\Facades\Route; use App\Http\Controllers\AuthController; use App\Http\Controllers\SinpusController;
+<?php use Illuminate\Support\Facades\Route; 
+use App\Http\Controllers\AuthController; 
+use App\Http\Controllers\SinpusController;
+use App\Http\Controllers\BookController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +18,6 @@ Route::get('/', [SinpusController::class, 'index']);
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::get('/forget-password', [AuthController::class, 'forget_password']);
+
+Route::get('/buku/atomic-habit', [BookController::class, 'detail']);
+

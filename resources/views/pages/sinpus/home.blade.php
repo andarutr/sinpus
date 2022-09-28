@@ -131,6 +131,7 @@
 			<div class="col s6 ">
 				<div class="setting-box">
 					<div class="card">
+						<a href="/buku/atomic-habit">
 						<div class="card-image">
 							<img src="https://www.aspirasionline.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-04-at-15.03.34.jpeg">
 						</div>
@@ -139,6 +140,7 @@
 							<p>James Clear</p>
 							<p>Status: tersedia!</p>
 						</div>
+						</a>
 					</div>
 				</div>
 			</div>

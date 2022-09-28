@@ -1,6 +1,6 @@
 <nav class="fixedtop topbar navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="index.html" class=" brand-logo "><i class="mdi mdi-book-open-page-variant"></i>SINPUS</a>
+      <a id="logo-container" href="/" class=" brand-logo "><i class="mdi mdi-book-open-page-variant"></i>SINPUS</a>
 
       <a href="#" data-target="slide-nav" class="waves-effect waves-circle navicon sidenav-trigger show-on-large"><i
           class="mdi mdi-menu"></i></a>

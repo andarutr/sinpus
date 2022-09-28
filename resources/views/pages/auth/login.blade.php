@@ -21,14 +21,14 @@
       <div class='row'>
         <div class='input-field col s12'>
           <input class='validate' type='email' name='email' id='email' />
-          <label for='email'>Enter your email</label>
+          <label for='email'>Email</label>
         </div>
       </div>
 
       <div class='row'>
         <div class='input-field col s12'>
           <input class='validate' type='password' name='password' id='password' />
-          <label for='password'>Enter your password</label>
+          <label for='password'>Password</label>
         </div>
         <label style='float: right;'>
           <a class='pink-text' href='/forget-password'><b>Forgot Password?</b></a>
