@@ -122,4 +122,42 @@
 	<div class="spacer"></div>
 </div>
 
+<div class="divider"></div>
+<div class="row ">
+	<div class="col s12 pad-0">
+		<h5 class="bot-20 sec-tit center ">Buku Terbaru!</h5>
+
+		<div class="row settings-row ">
+			<div class="col s6 ">
+				<div class="setting-box">
+					<div class="card">
+						<div class="card-image">
+							<img src="https://www.aspirasionline.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-04-at-15.03.34.jpeg">
+						</div>
+						<div class="card-content">
+							<p>Atomic Habit</p>
+							<p>James Clear</p>
+							<p>Status: tersedia!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col s6 ">
+				<div class="setting-box">
+					<div class="card">
+						<div class="card-image">
+							<img src="https://i0.wp.com/hattahimawan.com/wp-content/uploads/2022/01/psychology-of-money-book-cover-1024x768-1.jpg?fit=1024%2C768">
+						</div>
+						<div class="card-content">
+							<p>Psychology Of Money</p>
+							<p>Morgan Housel</p>
+							<p>Status: terpinjam!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="divider"></div>
 @endsection

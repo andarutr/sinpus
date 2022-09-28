@@ -1,13 +1,13 @@
 <div class="footer-menu circular">
     <ul>
       <li>
-        <a href="sub-apps.html"> <i class="mdi mdi-open-in-app"></i>
-          <span>Apps</span>
+        <a href="#"> <i class="mdi mdi-open-in-app"></i>
+          <span>Buku</span>
         </a>
       </li>
       <li>
-        <a href="sub-pages.html"> <i class="mdi mdi-shape-outline"></i>
-          <span>Pages</span>
+        <a href="#"> <i class="mdi mdi-shape-outline"></i>
+          <span>Kategori</span>
         </a>
       </li>
       <li>
@@ -16,13 +16,13 @@
         </a>
       </li>
       <li>
-        <a href="sub-uielements.html"> <i class="mdi mdi-laptop"></i>
-          <span>UI</span>
+        <a href="/login"> <i class="mdi mdi-laptop"></i>
+          <span>Login</span>
         </a>
       </li>
       <li>
-        <a href="sub-utilities-components.html"> <i class="mdi mdi-flask-outline"></i>
-          <span>Components</span>
+        <a href="#"> <i class="mdi mdi-flask-outline"></i>
+          <span>Tentang</span>
         </a>
       </li>
 

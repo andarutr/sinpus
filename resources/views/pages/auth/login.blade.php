@@ -3,30 +3,46 @@
 @section('title', 'Login')
 
 @section('content')
-<!-- login-->
-<div class="login app-pages app-section">
-	<div class="container">
-		<div class="pages-title">
-			<img src="/assets/img/logo.png" alt="Logo SINPUS" width="250">
-			<h3 style="margin-top: 20px;">LOGIN</h3>
-		</div>
-		<form action="#">
-			<input type="email" placeholder="Email">
-			<input type="password" placeholder="password">
-			<div><a href="/forget-password" class="forgot">Forgot Password?</a></div>
-			<div class="chebox">
-				<input type="checkbox" id="checkbox" />
-					<label for="checkbox">Remember me</label>
-			</div>
-			<button class="button shadow">Login</button>
-			<div class="create-account">Not Registered? <a href="/register">Create an account</a></div>
-		</form>
-		<div class="or">
-			<h5 class="shadow">OR</h5>
-			<button class="button shadow google">Login with Google</button>
-			<button class="button shadow facebook">Login with Facebook</button>
-		</div>
-	</div>
+<img class="responsive-img" style="width: 150px;" src="/sinpus/assets/images/logo.png" />
+<div class="section"></div>
+
+<h5 class="indigo-text">Login into your account</h5>
+<div class="section"></div>
+
+<div class="container">
+  <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+    <form class="col s12" method="post">
+      <div class='row'>
+        <div class='col s12'>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='input-field col s12'>
+          <input class='validate' type='email' name='email' id='email' />
+          <label for='email'>Enter your email</label>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='input-field col s12'>
+          <input class='validate' type='password' name='password' id='password' />
+          <label for='password'>Enter your password</label>
+        </div>
+        <label style='float: right;'>
+          <a class='pink-text' href='/forget-password'><b>Forgot Password?</b></a>
+        </label>
+      </div>
+
+      <br />
+      <center>
+        <div class='row'>
+          <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
+        </div>
+      </center>
+    </form>
+  </div>
 </div>
-<!-- end login -->
+<a href="/register">Create account</a>
 @endsection
