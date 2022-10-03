@@ -1,7 +1,8 @@
 <?php use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\AuthController; 
-use App\Http\Controllers\SinpusController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\SinpusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,9 @@ use App\Http\Controllers\BookController;
 */
 
 Route::get('/', [SinpusController::class, 'index']);
+Route::get('/user/profile', [UserController::class, 'profile']);
+Route::get('/user/profile/edit', [UserController::class, 'edit_profile']);
+Route::get('/user/change-password', [UserController::class, 'change_password']);
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::get('/forget-password', [AuthController::class, 'forget_password']);

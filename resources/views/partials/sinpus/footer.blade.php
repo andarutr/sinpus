@@ -21,11 +21,10 @@
         </a>
       </li>
       <li>
-        <a href="#"> <i class="mdi mdi-flask-outline"></i>
-          <span>Tentang</span>
+        <a href="/register"> <i class="mdi mdi-laptop"></i>
+          <span>Daftar</span>
         </a>
       </li>
-
     </ul>
   </div>
 

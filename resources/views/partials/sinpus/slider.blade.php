@@ -41,21 +41,21 @@
           <div class=" waves-effect index">
             <a href="/">
               <i class="mdi mdi-book-open-page-variant"></i>
-              <span class="title">Wishlist</span></a>
+              <span class="title">Wishlis (User)</span></a>
           </div>
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
             <a href="/">
               <i class="mdi mdi-book-open-page-variant"></i>
-              <span class="title">Histori</span></a>
+              <span class="title">Histori (User)</span></a>
           </div>
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
             <a href="/">
               <i class="mdi mdi-book-open-page-variant"></i>
-              <span class="title">Meringkas</span></a>
+              <span class="title">Meringkas (User)</span></a>
           </div>
         </li>
       </ul>
