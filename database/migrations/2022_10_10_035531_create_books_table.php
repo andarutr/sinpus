@@ -18,9 +18,11 @@ return new class extends Migration
             $table->string('nm_book', 128);
             $table->integer('id_category');
             $table->string('picture_book', 128);
+            $table->text('description');
             $table->string('author_book', 128);
             $table->string('publish_from', 128);
             $table->string('status', 25);
+            $table->string('url_book', 128);
             $table->timestamps();
         });
     }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\SinpusController;
 
 /*
@@ -16,6 +17,9 @@ use App\Http\Controllers\SinpusController;
 
 Route::get('/', [SinpusController::class, 'index']);
 Route::get('/kategori', [SinpusController::class, 'category']);
+Route::get('/kategori/{url}', [BookController::class, 'category']);
+Route::get('/buku', [BookController::class, 'book']);
+Route::get('/buku/{url}', [BookController::class, 'detail']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

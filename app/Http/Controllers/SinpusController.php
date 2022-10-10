@@ -10,7 +10,9 @@ class SinpusController extends Controller
     public function index()
     {
         $category = \DB::table('category')->get();
-        return view('pages.sinpus.home', compact('category'));
+        $books = \DB::table('books')->paginate(6);
+
+        return view('pages.sinpus.home', compact('category','books'));
     }
 
     // Category
@@ -18,11 +20,5 @@ class SinpusController extends Controller
     {
         $category = \DB::table('category')->get();
         return view('pages.sinpus.category', compact('category'));
-    }
-
-    // Book
-    public function book()
-    {
-        return view('pages.sinpus.book');
     }
 }
