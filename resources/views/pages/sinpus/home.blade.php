@@ -6,7 +6,7 @@
 <div class="carousel carousel-fullscreen carousel-slider home_carousel ">
 
       <a class="carousel-item" href="#carousel-slide-0!">
-        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"></div>
+        <div class="bg" style="background-image: url('/sinpus/assets/images/slider/slide-1.jpg')"></div>
         <div class="item-content center-align white-text">
           <div class="spacer-large"></div>
           <h3>Selamat Datang di SINPUS!</h3>
@@ -14,7 +14,7 @@
         </div>
       </a>
       <a class="carousel-item" href="#carousel-slide-1!">
-        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"></div>
+        <div class="bg" style="background-image: url('/sinpus/assets/images/slider/slide-2.jpg')"></div>
         <div class="item-content center-align white-text">
           <div class="spacer-large"></div>
           <h3>Pilih Buku!</h3>
@@ -133,7 +133,7 @@
 					<div class="card">
 						<a href="/buku/atomic-habit">
 						<div class="card-image">
-							<img src="https://www.aspirasionline.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-04-at-15.03.34.jpeg">
+							<img src="/sinpus/assets/images/book/atomic-habits.jpeg">
 						</div>
 						<div class="card-content">
 							<p>Atomic Habit</p>
@@ -147,14 +147,16 @@
 			<div class="col s6 ">
 				<div class="setting-box">
 					<div class="card">
+						<a href="/buku/atomic-habit">
 						<div class="card-image">
-							<img src="https://i0.wp.com/hattahimawan.com/wp-content/uploads/2022/01/psychology-of-money-book-cover-1024x768-1.jpg?fit=1024%2C768">
+							<img src="/sinpus/assets/images/book/psychology-of-money.jpg">
 						</div>
 						<div class="card-content">
 							<p>Psychology Of Money</p>
 							<p>Morgan Housel</p>
 							<p>Status: terpinjam!</p>
 						</div>
+						</a>
 					</div>
 				</div>
 			</div>

@@ -25,14 +25,14 @@
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
-            <a href="/">
+            <a href="/kategori">
               <i class="mdi mdi-widgets"></i>
               <span class="title">Kategori</span></a>
           </div>
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
-            <a href="/">
+            <a href="/buku">
               <i class="mdi mdi-book-open-page-variant"></i>
               <span class="title">Buku</span></a>
           </div>
@@ -41,7 +41,7 @@
           <div class=" waves-effect index">
             <a href="/">
               <i class="mdi mdi-book-open-page-variant"></i>
-              <span class="title">Wishlis (User)</span></a>
+              <span class="title">Wishlist (User)</span></a>
           </div>
         </li>
         <li class="lvl1 ">
