@@ -1,6 +1,6 @@
 @extends('layouts.sinpus')
 
-@section('title', 'Kategori')
+@section('title', 'Kumpulan Kategori Buku')
 
 @section('content')
 <div class="container">
@@ -11,54 +11,16 @@
 		<h5 class="bot-20 sec-tit center ">Kategori Buku</h5>
 
 		<div class="row settings-row ">
+			@foreach($category as $ctg)
 			<div class="col s6 ">
-			<div class="setting-box z-depth-1 center ">
-				<a href="#!">
-				<i class="mdi mdi-book-open-page-variant"></i>
-				<h6>Agama</h6>
-				</a>
+				<div class="setting-box z-depth-1 center ">
+					<a href="/kategori/{{ $ctg->url_category }}">
+						<i class="mdi mdi-book-open-page-variant"></i>
+						<h6>{{ $ctg->nm_category}}</h6>
+					</a>
+				</div>
 			</div>
-			</div>
-			<div class="col s6 ">
-			<div class="setting-box z-depth-1 center ">
-				<a href="#!">
-				<i class="mdi mdi-book-open-page-variant"></i>
-				<h6>Bisnis</h6>
-				</a>
-			</div>
-			</div>
-			<div class="col s6 ">
-			<div class="setting-box z-depth-1 center ">
-				<a href="#!">
-				<i class="mdi mdi-book-open-page-variant"></i>
-				<h6>Computer</h6>
-				</a>
-			</div>
-			</div>
-			<div class="col s6 ">
-			<div class="setting-box z-depth-1 center ">
-				<a href="#!">
-				<i class="mdi mdi-book-open-page-variant"></i>
-				<h6>Programming</h6>
-				</a>
-			</div>
-			</div>
-			<div class="col s6 ">
-			<div class="setting-box z-depth-1 center ">
-				<a href="#!">
-				<i class="mdi mdi-book-open-page-variant"></i>
-				<h6>Psikologi</h6>
-				</a>
-			</div>
-			</div>
-			<div class="col s6 ">
-			<div class="setting-box z-depth-1 center ">
-				<a href="#!">
-				<i class="mdi mdi-book-open-page-variant"></i>
-				<h6>Lainnya</h6>
-				</a>
-			</div>
-			</div>
+			@endforeach
 		</div>
 		</div>
 	</div>

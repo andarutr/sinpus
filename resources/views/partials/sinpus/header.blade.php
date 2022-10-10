@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SINPUS: @yield('title')</title>
+<title>@yield('title') - SINPUS</title>
 <link rel="apple-touch-icon" sizes="57x57" href="/sinpus/assets/images/icons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/sinpus/assets/images/icons/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/sinpus/assets/images/icons/apple-icon-72x72.png">
