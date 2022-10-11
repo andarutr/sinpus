@@ -1,9 +1,12 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
+            <center>    
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="/sinpus/assets/images/icons/android-icon-144x144.png">
             </a>
+                <h1 style="font-size: 25px; margin-top: 10px;">Reset Password</h1>
+            </center>
         </x-slot>
 
         <form method="POST" action="{{ route('password.update') }}">
