@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Okt 2022 pada 05.55
+-- Waktu pembuatan: 11 Okt 2022 pada 09.20
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -237,6 +237,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_kelas` int(11) DEFAULT NULL,
   `id_role` int(11) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -248,9 +249,10 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `id_kelas`, `id_role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@pbs2app.my.id', NULL, '$2y$10$bix2MqBHeNDmohe8c7rTLOxqebrgQzieHPbMaBovFgX7ElrA2O22m', NULL, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40'),
-(2, 'Dimas Fauzi', 'dimasfauzy@gmail.com', '2022-10-11 03:42:58', '$2y$10$GQCQj57jMcV7SrTSrPWate.mJx4GvjkTAqT9EXH1KzCoO4d9ZMiIq', NULL, 2, 'kEMrXVeSFekWhco5rsZiXnuEQ10cFTbVwoBhITtb7uJSj0Y4Remf6hOtJrR4', '2022-10-11 03:40:47', '2022-10-11 03:45:01');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `picture`, `id_kelas`, `id_role`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin@pbs2app.my.id', NULL, '$2y$10$bix2MqBHeNDmohe8c7rTLOxqebrgQzieHPbMaBovFgX7ElrA2O22m', 'user.jpg', NULL, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40'),
+(2, 'Dimas Fauzi', 'dimasfauzy@gmail.com', '2022-10-11 03:42:58', '$2y$10$GQCQj57jMcV7SrTSrPWate.mJx4GvjkTAqT9EXH1KzCoO4d9ZMiIq', 'user.jpg', 2, 2, 'kEMrXVeSFekWhco5rsZiXnuEQ10cFTbVwoBhITtb7uJSj0Y4Remf6hOtJrR4', '2022-10-11 03:40:47', '2022-10-11 03:45:01'),
+(3, 'Bagus Prio Utomo', 'bagusprio@gmail.com', '2022-10-11 07:06:21', '$2y$10$6PGVNfUMVhbxTmnSPEVFaOrNiVwUw39lOqmDPhYBx26nGClSpeSyG', 'user.jpg', NULL, 2, NULL, '2022-10-11 07:04:36', '2022-10-11 07:06:21');
 
 -- --------------------------------------------------------
 
@@ -408,7 +410,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `wishlist`
