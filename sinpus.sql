@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Okt 2022 pada 08.48
+-- Waktu pembuatan: 11 Okt 2022 pada 05.55
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -90,6 +90,40 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kelas`
+--
+
+CREATE TABLE `kelas` (
+  `id_kelas` int(11) NOT NULL,
+  `nomor_kelas` varchar(3) NOT NULL,
+  `prodi_kelas` varchar(128) NOT NULL,
+  `url_kelas` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kelas`
+--
+
+INSERT INTO `kelas` (`id_kelas`, `nomor_kelas`, `prodi_kelas`, `url_kelas`) VALUES
+(1, '10', 'Animasi', '10-animasi'),
+(2, '11', 'Animasi', '11-animasi'),
+(3, '12', 'Animasi', '12-animasi'),
+(4, '10', 'Akuntansi', '10-akuntansi'),
+(5, '11', 'Akuntansi', '11-akuntansi'),
+(6, '12', 'Akuntansi', '12-akuntansi'),
+(7, '10', 'Perbankan Syariah', '10-perbankan-syariah'),
+(8, '11', 'Perbankan Syariah', '11-perbankan-syariah'),
+(9, '12', 'Perbankan Syariah', '12-perbankan-syariah'),
+(10, '10', 'OTKP1', '10-otkp1'),
+(11, '11', 'OTKP1', '11-otkp1'),
+(12, '12', 'OTKP1', '12-otkp1'),
+(13, '10', 'OTKP2', '10-otkp2'),
+(14, '11', 'OTKP2', '11-otkp2'),
+(15, '12', 'OTKP2', '12-otkp2');
 
 -- --------------------------------------------------------
 
@@ -203,6 +237,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_kelas` int(11) DEFAULT NULL,
   `id_role` int(11) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -213,8 +248,9 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `id_role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@pbs2app.my.id', NULL, '$2y$10$bix2MqBHeNDmohe8c7rTLOxqebrgQzieHPbMaBovFgX7ElrA2O22m', 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `id_kelas`, `id_role`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin@pbs2app.my.id', NULL, '$2y$10$bix2MqBHeNDmohe8c7rTLOxqebrgQzieHPbMaBovFgX7ElrA2O22m', NULL, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40'),
+(2, 'Dimas Fauzi', 'dimasfauzy@gmail.com', '2022-10-11 03:42:58', '$2y$10$GQCQj57jMcV7SrTSrPWate.mJx4GvjkTAqT9EXH1KzCoO4d9ZMiIq', NULL, 2, 'kEMrXVeSFekWhco5rsZiXnuEQ10cFTbVwoBhITtb7uJSj0Y4Remf6hOtJrR4', '2022-10-11 03:40:47', '2022-10-11 03:45:01');
 
 -- --------------------------------------------------------
 
@@ -252,6 +288,12 @@ ALTER TABLE `category`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indeks untuk tabel `kelas`
+--
+ALTER TABLE `kelas`
+  ADD PRIMARY KEY (`id_kelas`);
 
 --
 -- Indeks untuk tabel `kembalikan`
@@ -327,6 +369,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `kelas`
+--
+ALTER TABLE `kelas`
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT untuk tabel `kembalikan`
 --
 ALTER TABLE `kembalikan`
@@ -360,7 +408,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `wishlist`
