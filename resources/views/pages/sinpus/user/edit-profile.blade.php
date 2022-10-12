@@ -1,73 +1,89 @@
-@extends('layouts.sinpus')
+@extends('layouts.panel')
 
 @section('title', 'Edit Profile User')
 
 @section('content')
-<div class="container is-pagetitle">
-      <div class="section">
-        <h5 class="pagetitle">Edit Profile</h5>
-        <p>Hai, John Doe!</p>
-        <div class="divider"></div>
+<div class="container-xxl">
+  <!-- Page Header -->
+  <div class="hk-pg-header pt-7 pb-4">
+    <h1 class="pg-title">Edit Profile</h1>
+  </div>
+  <!-- /Page Header -->
+
+  <!-- Page Body -->
+  <div class="hk-pg-body">
+    <div class="row edit-profile-wrap">
+      <div class="col-lg-12 col-sm-9 col-12">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="tab_block_1">
+            <form action="/user/profil/edit" method="POST" enctype="multipart/form-data">@csrf
+              <div class="row gx-3">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <div class="media align-items-center">
+                      <div class="media-head me-5">
+                        <div class="avatar avatar-rounded avatar-xxl">
+                          <img src="/sinpus/assets/images/profile/{{ $user->picture }}" alt="user" class="avatar-img">
+                        </div>
+                      </div>
+                      <div class="media-body">
+                        <div class="btn btn-soft-primary btn-file mb-1">
+                          Upload Photo
+                          <input type="file" class="upload" name="picture">
+                        </div>
+                        <div class="form-text text-muted">
+                          For better preview recommended size is 450px x 450px. Max size 5mb.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="title title-xs title-wth-divider text-primary text-uppercase my-4"><span>Personal Info</span></div>
+              <div class="row gx-3">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-label">Nama Lengkap</label>
+                    <input class="form-control" type="text" name="name" value="{{ $user->name }}">
+                    @error('name')<p class="text-danger">{{ $message }}</p>@enderror
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input class="form-control" type="text" value="{{ $user->email }}" readonly/>
+                  </div>
+                </div>
+              </div>
+              <div class="row gx-3">
+                <div class="col-sm-12">
+                  <label class="form-label">Kelas</label>
+                  <select class="form-select" name="kelas">
+                    <option value="{{ $user->id_kelas }}">{{ $user->nomor_kelas }} {{ $user->prodi_kelas }}</option>
+                    @foreach($kelas as $kls)
+                    <option value="{{ $kls->id_kelas }}">{{ $kls->nomor_kelas }} {{ $kls->prodi_kelas }}</option>
+                    @endforeach
+                  </select>
+                  @error('kelas')<p class="text-danger">{{ $message }}</p>@enderror
+                </div>
+              </div>
+              <div class="title title-xs title-wth-divider text-primary text-uppercase my-4"><span>Additional Info</span></div>
+              <div class="row gx-3">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input class="form-control" type="text" name="phone_number" value="{{ $user->phone_number }}">
+                    @error('phone_number')<p class="text-danger">{{ $message }}</p>@enderror
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary mt-5">Save Changes</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="container">
-      <div class="section">
-
-
-        <div class="editprof-img">
-          <div class="img-wrap circle">
-            <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c21pbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="foto User">
-            <i class="mdi mdi-pencil prefix"></i>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="mdi mdi-account-outline prefix"></i>
-            <input id="first_name" type="text" class="validate">
-            <label for="first_name">Nama Lengkap</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="mdi mdi-email-outline prefix"></i>
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="mdi mdi-cellphone prefix"></i>
-            <input id="mobno" type="text" class="validate">
-            <label for="mobno">No Hp</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="mdi mdi-account prefix"></i>
-            <input id="classw" type="text" class="validate">
-            <label for="classw">Kelas</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="mdi mdi-lock-outline prefix"></i>
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col s12">
-            <a class="waves-effect waves-light btn-large bg-primary ">Save Profile</a>
-          </div>
-        </div>
-        <div style="margin-top: 100px"></div>
-      </div>
-    </div>
+  </div>
+  <!-- /Page Body -->   
+</div>
 @endsection

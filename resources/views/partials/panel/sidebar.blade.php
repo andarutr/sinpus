@@ -87,6 +87,30 @@
 				</ul>
 			</div>
 			<div class="menu-gap"></div>
+			@elseif(Auth::user()->id_role === 2)
+			<div class="menu-group">
+				<div class="nav-header">
+					<span>Apps</span>
+				</div>
+				<ul class="navbar-nav flex-column">
+					<li class="nav-item">
+						<a class="nav-link" href="/user/profil/edit">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">account_circle</i>
+							</span>
+							<span class="nav-link-text">Edit Profil</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/user/change-password">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">account_circle</i>
+							</span>
+							<span class="nav-link-text">Change Password</span>
+						</a>
+					</li>	
+				</ul>
+			</div>
 			@endif
 		</div>
 	</div>

@@ -30,11 +30,15 @@
     <div class="section">
         <div class="row ">
             <div class="col s12 pad-0"><h5 class="bot-20 sec-tit  ">About</h5>    
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, reprehenderit aliquid? Dolorem iste esse voluptatem illum asperiores tempore officiis deserunt sunt sapiente soluta amet earum magni nihil, provident beatae totam.</p>
+                <p>Nama Lengkap : {{ $user->name }}</p>
+                <p>Email : {{ $user->email }}</p>
+                <p>Daftar Pada : {{ $user->created_at }}</p>
+                <p>Terverifikasi Pada : {{ $user->email_verified_at }}</p>
             </div>
+            <a class="waves-effect waves-light btn-large green darken-1" href="/user/profil/edit"><i class="mdi mdi-message-text-outline left"></i>EDIT PROFIL</a>
         </div>
     </div>
   </div>
 </div>
-<div style="margin-top: 52px"></div>
+<div style="margin-top: 80px"></div>
 @endsection

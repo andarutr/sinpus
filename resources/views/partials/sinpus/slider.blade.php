@@ -48,6 +48,23 @@
           </div>
         </li>
         @auth
+        <li class="sh-wrap">
+          <div class="subheader">Fitur</div>
+        </li>
+        <li class="lvl1 ">
+          <div class=" waves-effect index">
+            <a href="/user/profil">
+              <i class="mdi mdi-account"></i>
+              <span class="title">Profil</span></a>
+          </div>
+        </li>
+        <li class="lvl1 ">
+          <div class=" waves-effect index">
+            <a href="/user/change-password">
+              <i class="mdi mdi-lock"></i>
+              <span class="title">Ganti Password</span></a>
+          </div>
+        </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
             <a href="/">
