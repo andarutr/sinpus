@@ -5,10 +5,10 @@
 @section('content')
 <div class="ui-profile">
     <div class="primg">
-        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c21pbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Foto User">
+        <img src="/sinpus/assets/images/profile/{{ $user->picture }}" alt="Foto User" width="812" height="512">
         <div class="prname white-text">
-            <h3 class="name">John Doe</h3>
-            <div class="pos">XII Animasi</div>
+            <h3 class="name">{{ $user->name }}</h3>
+            <div class="pos">{{ $user->nomor_kelas }} {{ $user->prodi_kelas }}</div>
         </div>
     </div>
     <div class="prinfo card-panel primary-bg white-text">

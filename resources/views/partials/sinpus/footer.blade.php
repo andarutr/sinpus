@@ -1,12 +1,12 @@
 <div class="footer-menu circular">
     <ul>
       <li>
-        <a href="#"> <i class="mdi mdi-open-in-app"></i>
+        <a href="/buku"> <i class="mdi mdi-book-open-page-variant"></i>
           <span>Buku</span>
         </a>
       </li>
       <li>
-        <a href="#"> <i class="mdi mdi-shape-outline"></i>
+        <a href="/kategori"> <i class="mdi mdi-shape-outline"></i>
           <span>Kategori</span>
         </a>
       </li>
@@ -15,16 +15,30 @@
           <span>Home</span>
         </a>
       </li>
+      @guest
       <li>
-        <a href="/login"> <i class="mdi mdi-laptop"></i>
+        <a href="/login"> <i class="mdi mdi-login"></i>
           <span>Login</span>
         </a>
       </li>
       <li>
-        <a href="/register"> <i class="mdi mdi-laptop"></i>
+        <a href="/register"> <i class="mdi mdi-account-plus"></i>
           <span>Daftar</span>
         </a>
       </li>
+      @endguest
+      @auth
+      <li>
+        <a href="/user/profil"> <i class="mdi mdi-account"></i>
+          <span>Profil</span>
+        </a>
+      </li>
+      <li>
+        <a href="/logout"> <i class="mdi mdi-logout"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+      @endauth
     </ul>
   </div>
 

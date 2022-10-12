@@ -1,13 +1,23 @@
 <ul id="slide-nav" class="sidenav sidemenu">
     <li class="user-wrap">
       <div class="user-view row">
+        @guest
         <div class="col s3 imgarea">
-          <a href="#user" class="status available"><img class="circle" src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c21pbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="menu user"></a>
+          <a href="#user" class="status available"><img class="circle" src="/sinpus/assets/images/icons/android-icon-96x96.png" alt="menu user"></a>
         </div>
         <div class="col s9 infoarea">
-          <a href="#"><span class="name">John Doe</span></a>
-          <a href="#"><span class="email">johndoe@gmail.com</span></a>
+          <p>Belum Masuk? Silahkan <a href="/login" style="color: blue;">Login</a></p>
         </div>
+        @endguest
+        @auth
+        <div class="col s3 imgarea">
+          <a href="#user" class="status available"><img class="circle" src="/sinpus/assets/images/profile/{{ Auth::user()->picture }}" alt="menu user"></a>
+        </div>
+        <div class="col s9 infoarea">
+          <p class="name">{{ Auth::user()->name }}</p>
+          <p class="email">{{ Auth::user()->email }}</p>
+        </div>
+        @endauth
       </div>
     </li>
     <li class="menulinks">
@@ -37,27 +47,29 @@
               <span class="title">Buku</span></a>
           </div>
         </li>
+        @auth
         <li class="lvl1 ">
           <div class=" waves-effect index">
             <a href="/">
-              <i class="mdi mdi-book-open-page-variant"></i>
-              <span class="title">Wishlist (User)</span></a>
+              <i class="mdi mdi-book"></i>
+              <span class="title">Wishlist</span></a>
           </div>
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
             <a href="/">
-              <i class="mdi mdi-book-open-page-variant"></i>
-              <span class="title">Histori (User)</span></a>
+              <i class="mdi mdi-history"></i>
+              <span class="title">Histori</span></a>
           </div>
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
             <a href="/">
-              <i class="mdi mdi-book-open-page-variant"></i>
-              <span class="title">Meringkas (User)</span></a>
+              <i class="mdi mdi-pen"></i>
+              <span class="title">Meringkas</span></a>
           </div>
         </li>
+        @endauth
       </ul>
     </li>
   </ul>
