@@ -94,6 +94,14 @@
 				</div>
 				<ul class="navbar-nav flex-column">
 					<li class="nav-item">
+						<a class="nav-link" href="/">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">assessment</i>
+							</span>
+							<span class="nav-link-text">Home</span>
+						</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="/user/profil/edit">
 							<span class="nav-icon-wrap">
 								<i class="material-icons">account_circle</i>
@@ -104,7 +112,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="/user/change-password">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">account_circle</i>
+								<i class="material-icons">lock</i>
 							</span>
 							<span class="nav-link-text">Change Password</span>
 						</a>

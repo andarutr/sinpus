@@ -19,12 +19,14 @@
             <form action="/user/change-password" method="POST">@csrf
               <div class="row gx-3">
                 @if(session('success_change_password'))
-                <div class="alert alert-primary" role="alert">
-                  {{ session('success_change_password') }}
+                <div class="alert alert-primary alert-wth-icon alert-dismissible fade show" role="alert">
+                  <span class="alert-icon-wrap"><i class="zmdi zmdi-check-circle"></i></span> {{ session('success_change_password') }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @elseif(session('failed_change_password'))
-                <div class="alert alert-danger" role="alert">
-                  {{ session('failed_change_password') }}
+                <div class="alert alert-danger alert-wth-icon alert-dismissible fade show" role="alert">
+                  <span class="alert-icon-wrap"><i class="zmdi zmdi-check-circle"></i></span> {{ session('failed_change_password') }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
                 <div class="col-sm-12">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Okt 2022 pada 09.50
+-- Waktu pembuatan: 12 Okt 2022 pada 15.36
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -252,10 +252,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `picture`, `phone_number`, `id_kelas`, `id_role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@pbs2app.my.id', NULL, '$2y$10$bix2MqBHeNDmohe8c7rTLOxqebrgQzieHPbMaBovFgX7ElrA2O22m', 'user.jpg', NULL, 16, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40'),
-(2, 'Dimas Fauzi', 'dimasfauzy@gmail.com', '2022-10-11 03:42:58', '$2y$10$GQCQj57jMcV7SrTSrPWate.mJx4GvjkTAqT9EXH1KzCoO4d9ZMiIq', 'user.jpg', NULL, 1, 2, 'kEMrXVeSFekWhco5rsZiXnuEQ10cFTbVwoBhITtb7uJSj0Y4Remf6hOtJrR4', '2022-10-11 03:40:47', '2022-10-11 03:45:01'),
-(3, 'Bagus Prio Utomo', 'bagusprio@gmail.com', '2022-10-11 07:06:21', '$2y$10$6PGVNfUMVhbxTmnSPEVFaOrNiVwUw39lOqmDPhYBx26nGClSpeSyG', 'user.jpg', NULL, 16, 2, NULL, '2022-10-11 07:04:36', '2022-10-11 07:06:21'),
-(4, 'Andaru Triadi', 'andarutr@gmail.com', '2022-10-12 03:10:20', '$2y$10$TmM9E/E5XvujK6/1Yf7ZUe1qzx3LufDglt3PwKgQZFdyzI/ARFwc.', 'user.jpg', NULL, 16, 2, NULL, '2022-10-12 02:51:47', '2022-10-12 03:10:20');
+(1, 'Admin', 'admin@pbs2app.my.id', NULL, '$2y$10$bix2MqBHeNDmohe8c7rTLOxqebrgQzieHPbMaBovFgX7ElrA2O22m', 'user.jpg', NULL, 16, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40');
 
 -- --------------------------------------------------------
 
@@ -413,7 +410,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `wishlist`

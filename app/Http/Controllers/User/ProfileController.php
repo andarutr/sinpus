@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -36,5 +37,30 @@ class ProfileController extends Controller
             'kelas' => 'required',
             'phone_number' => 'required',
         ]);
+
+        if($req->hasFile('picture')) {
+            $pict = $req->file('picture');
+            $pict->move('sinpus/assets/images/profile', $pict->getClientOriginalName());
+            $update = \DB::table('users')
+                        ->where('email', Auth::user()->email)
+                        ->update([
+                            'name' => $req->name,
+                            'picture' => $pict->getClientOriginalName(),
+                            'id_kelas' => $req->kelas,
+                            'phone_number' => $req->phone_number,
+                        ]);    
+        }else{
+            $update = \DB::table('users')
+                        ->where('email', Auth::user()->email)
+                        ->update([
+                            'name' => $req->name,
+                            'id_kelas' => $req->kelas,
+                            'phone_number' => $req->phone_number,
+                        ]);
+        }
+        
+
+        return redirect()->back()->with('success_edit_profile', 'Berhasil edit profil!');
+
     }
 }

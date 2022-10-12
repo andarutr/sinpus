@@ -50,8 +50,6 @@
 					<div class="dropdown-menu dropdown-menu-end">
 						<p>Selamat Datang {{ Auth::user()->name }}</p>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Profile</a>
-						<div class="dropdown-divider"></div>
 						<form method="POST" action="/logout">@csrf
 							<button type="submit" class="dropdown-item" >Logout</button>
 						</form>

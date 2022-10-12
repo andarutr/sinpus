@@ -18,6 +18,12 @@
           <div class="tab-pane fade show active" id="tab_block_1">
             <form action="/user/profil/edit" method="POST" enctype="multipart/form-data">@csrf
               <div class="row gx-3">
+                @if(session('success_edit_profile'))
+                <div class="alert alert-primary alert-wth-icon alert-dismissible fade show" role="alert">
+                  <span class="alert-icon-wrap"><i class="zmdi zmdi-check-circle"></i></span> {{ session('success_edit_profile') }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
                 <div class="col-sm-12">
                   <div class="form-group">
                     <div class="media align-items-center">
