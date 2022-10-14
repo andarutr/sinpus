@@ -17,6 +17,11 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/admin/change-password', [AChangePasswordController::class, 'index']);
     Route::post('/admin/change-password', [AChangePasswordController::class, 'update']);
     Route::get('/admin/book', [BookController::class, 'index']);
+    Route::get('/admin/book/create', [BookController::class, 'create'])->name('book-create');
+    Route::post('/admin/book/create', [BookController::class, 'store']);
+    Route::get('/admin/book/edit/{id}', [BookController::class, 'edit'])->name('book-edit');
+    Route::post('/admin/book/edit/{id}', [BookController::class, 'update']);
+    Route::get('/admin/book/delete/{id}', [BookController::class, 'destroy']);
 });
 
 Route::middleware(['auth','isUser'])->group(function () {
