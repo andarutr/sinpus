@@ -30,7 +30,7 @@
 						<div class="card card-border mb-0 h-100">
 							<div class="card-header card-header-action">
 								<h6>Siswa Terdaftar
-									<span class="badge badge-sm badge-light ms-1">{{ $user_count }}</span>
+									<span class="badge badge-sm badge-light ms-1">{{ $user_count-1 }}</span>
 								</h6>
 							</div>
 							<div class="card-body">
@@ -46,9 +46,10 @@
 										</thead>
 										<tbody>
 											@foreach($users as $user)
+											@if($user->id_role === 2)
 											<tr>
 												<td>
-													<img src="/sinpus/assets/images/profile/{{ $user->picture }}" class="img-fluid rounded-circle" width="80">
+													<img src="/sinpus/assets/images/profile/{{ $user->picture }}" class="img-fluid rounded" width="80" height="80">
 												</td>
 												<td>
 													<p>{{ $user->name }}</p>
@@ -60,6 +61,7 @@
 													<p>{{ $user->created_at }}</p>
 												</td>
 											</tr>
+											@endif
 											@endforeach
 										</tbody>
 									</table>

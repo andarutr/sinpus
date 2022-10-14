@@ -1,33 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
 use Auth;
 use Spatie\Image\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ProfileController extends Controller
+class AProfileController extends Controller
 {
-    public function show()
-    {
-        $user = \DB::table('users')
-                    ->join('kelas', 'users.id_kelas', '=', 'kelas.id_kelas')
-                    ->where('name', Auth::user()->name)
-                    ->select('users.*', 'kelas.*')
-                    ->first();
-        return view('pages.sinpus.user.profile', compact('user'));
-    }
-
     public function edit()
     {
+        $menu = 'Edit Profile';
         $user = \DB::table('users')
                     ->join('kelas', 'users.id_kelas', '=', 'kelas.id_kelas')
                     ->where('name', Auth::user()->name)
                     ->select('users.*', 'kelas.*')
                     ->first();
         $kelas = \DB::table('kelas')->get();
-        return view('pages.sinpus.user.edit-profile', compact('user','kelas'));
+        return view('pages.admin.edit-profile', compact('menu','user','kelas'));
     }
 
     public function update(Request $req)

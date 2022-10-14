@@ -12,6 +12,7 @@
 
 <!-- Simplebar JS -->
 <script src="/panel/vendors/simplebar/dist/simplebar.min.js"></script>
+@stack('scripts')
 
 <!-- Init JS -->
 <script src="/panel/dist/js/init.js"></script>

@@ -29,7 +29,7 @@
 			@if(Auth::user()->id_role === 1)
 			<div class="menu-group">
 				<ul class="navbar-nav flex-column">
-					<li class="nav-item active">
+					<li class="nav-item @if($menu == 'Dashboard') active @endif">
 						<a class="nav-link" href="/admin">
 							<span class="nav-icon-wrap">
 								<i data-feather="bar-chart-2"></i>
@@ -45,45 +45,30 @@
 					<span>Apps</span>
 				</div>
 				<ul class="navbar-nav flex-column">
-					<li class="nav-item">
-						<a class="nav-link" href="#">
+					<li class="nav-item @if($menu == 'Edit Profile') active @endif">
+						<a class="nav-link" href="/admin/profil/edit">
 							<span class="nav-icon-wrap">
 								<i class="material-icons">account_circle</i>
 							</span>
-							<span class="nav-link-text">Profile</span>
+							<span class="nav-link-text">Edit Profil</span>
+						</a>
+					</li>
+					<li class="nav-item @if($menu == 'Change Password') active @endif">
+						<a class="nav-link" href="/admin/change-password">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">lock</i>
+							</span>
+							<span class="nav-link-text">Change Password</span>
 						</a>
 					</li>	
-					<!-- <li class="nav-item">
-						<a class="nav-link" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#dash_chat">
+					<li class="nav-item @if($menu == 'Book') active @endif">
+						<a class="nav-link" href="/admin/book">
 							<span class="nav-icon-wrap">
-								<span class="svg-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-										<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-										<path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
-										<line x1="12" y1="11" x2="12" y2="11.01" />
-										<line x1="8" y1="11" x2="8" y2="11.01" />
-										<line x1="16" y1="11" x2="16" y2="11.01" />
-									</svg>
-								</span>
+								<i class="material-icons">book</i>
 							</span>
-							<span class="nav-link-text">Chat</span>
+							<span class="nav-link-text">Book</span>
 						</a>
-						<ul id="dash_chat" class="nav flex-column collapse  nav-children">
-							<li class="nav-item">
-								<ul class="nav flex-column">
-									<li class="nav-item">
-										<a class="nav-link" href="chats.html"><span class="nav-link-text">Chats</span></a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="chats-group.html"><span class="nav-link-text">Groups</span></a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="chats-contact.html"><span class="nav-link-text">Contacts</span></a>
-									</li>
-								</ul>	
-							</li>	
-						</ul>	
-					</li> -->
+					</li>
 				</ul>
 			</div>
 			<div class="menu-gap"></div>
