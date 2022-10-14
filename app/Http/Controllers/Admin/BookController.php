@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Spatie\Image\Image;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 use App\Http\Controllers\Controller;
 
 class BookController extends Controller
@@ -118,7 +119,9 @@ class BookController extends Controller
 
 	public function destroy($id)
 	{
+		$book = \DB::table('books')->where('id_book',$id)->first();
 		$delete = \DB::table('books')->where('id_book',$id)->delete();
+		$delete_file = File::delete('sinpus/assets/images/book/'.$book->picture_book);
 		return redirect('/admin/book')->with('success_book_delete','Berhasil posting buku!');
 	}
 }

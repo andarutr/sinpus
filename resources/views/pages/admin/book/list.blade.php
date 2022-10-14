@@ -37,7 +37,6 @@
 							<th>Foto</th>
 							<th>Buku</th>
 							<th>Author</th>
-							<th>Publisher</th>
 							<th>Created At</th>
 							<th>Updated At</th>
 							<th>Action</th>
@@ -51,7 +50,6 @@
 							</td>
 							<td>{{ $book->nm_book }}</td>
 							<td>{{ $book->author_book }}</td>
-							<td>{{ $book->publish_from }}</td>
 							<td>{{ $book->created_at }}</td>
 							<td>{{ $book->updated_at }}</td>
 							<td>

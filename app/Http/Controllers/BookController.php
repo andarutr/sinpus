@@ -9,7 +9,7 @@ class BookController extends Controller
     // Book
     public function book()
     {
-        $books = \DB::table('books')->get();
+        $books = \DB::table('books')->orderByDesc('id_book')->get();
         return view('pages.sinpus.book.all', compact('books'));
     }
 

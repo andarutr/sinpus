@@ -10,7 +10,7 @@ class SinpusController extends Controller
     public function index()
     {
         $category = \DB::table('category')->get();
-        $books = \DB::table('books')->paginate(6);
+        $books = \DB::table('books')->orderByDesc('id_book')->limit(4)->get();
 
         return view('pages.sinpus.home', compact('category','books'));
     }
