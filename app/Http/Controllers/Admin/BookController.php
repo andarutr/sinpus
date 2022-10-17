@@ -117,7 +117,7 @@ class BookController extends Controller
 		return redirect('/admin/book')->with('success_book_edit','Berhasil edit buku!');
 	}
 
-	public function destroy($id)
+	protected function destroy($id)
 	{
 		$book = \DB::table('books')->where('id_book',$id)->first();
 		$delete = \DB::table('books')->where('id_book',$id)->delete();

@@ -69,6 +69,14 @@
 							<span class="nav-link-text">Book</span>
 						</a>
 					</li>
+					<li class="nav-item @if($menu == 'Category') active @endif">
+						<a class="nav-link" href="/admin/category">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">account_balance</i>
+							</span>
+							<span class="nav-link-text">Kategori</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="menu-gap"></div>
