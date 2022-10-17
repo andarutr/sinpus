@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Auth;
-use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

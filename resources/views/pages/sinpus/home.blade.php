@@ -97,8 +97,6 @@
 						</div>
 						<div class="card-content">
 							<p>{{ $book->nm_book }}</p>
-							<p>{{ $book->author_book }}</p>
-							<p>Status: {{ $book->status }}!</p>
 						</div>
 						</a>
 					</div>

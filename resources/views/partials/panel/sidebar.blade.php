@@ -77,6 +77,14 @@
 							<span class="nav-link-text">Kategori</span>
 						</a>
 					</li>
+					<li class="nav-item @if($menu == 'Inventory') active @endif">
+						<a class="nav-link" href="/admin/inventory">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">done_all</i>
+							</span>
+							<span class="nav-link-text">Ketersediaan</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="menu-gap"></div>

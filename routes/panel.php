@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AProfileController;
+use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\ChangePasswordController;
 use App\Http\Controllers\Admin\AChangePasswordController;
@@ -29,6 +30,8 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/admin/category/edit/{id}', [CategoryController::class, 'edit']);
     Route::post('/admin/category/edit/{id}', [CategoryController::class, 'update']);
     Route::get('/admin/category/delete/{id}', [CategoryController::class, 'destroy']);
+    Route::get('/admin/inventory', [InventoryController::class, 'index']);
+    Route::get('/admin/inventory/edit/{id}', [InventoryController::class, 'update']);
 });
 
 Route::middleware(['auth','isUser'])->group(function () {

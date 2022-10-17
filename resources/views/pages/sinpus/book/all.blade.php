@@ -19,8 +19,6 @@
 						</div>
 						<div class="card-content">
 							<p>{{ $book->nm_book }}</p>
-							<p>{{ $book->author_book }}</p>
-							<p>Status: {{ $book->status }}!</p>
 						</div>
 						</a>
 					</div>
@@ -30,5 +28,5 @@
 		</div>
 	</div>
 </div>
-<div class="divider"></div>
+<div class="divider" style="margin-top: 100px;"></div>
 @endsection
