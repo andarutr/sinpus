@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id_pinjam');
             $table->integer('id_user');
             $table->integer('id_book');
-            $table->date('duration');
+            $table->date('duration')->nullable();
             $table->timestamps();
         });
     }

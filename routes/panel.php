@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AProfileController;
+use App\Http\Controllers\User\PinjamBukuController;
 use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\ChangePasswordController;
@@ -43,4 +44,5 @@ Route::middleware(['auth','isUser'])->group(function () {
     Route::post('/user/profil/edit', [ProfileController::class, 'update']);
     Route::get('/user/change-password', [ChangePasswordController::class, 'index']);
     Route::post('/user/change-password', [ChangePasswordController::class, 'update']);
+    Route::get('/user/pinjam/{url}', [PinjamBukuController::class, 'store']);
 });

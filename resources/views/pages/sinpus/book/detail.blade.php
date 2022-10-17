@@ -31,7 +31,11 @@
             <span class="small tags"><a class="small" href="#!">Author : {{ $book->author_book }}</a></span>
             <?= $book->description; ?>
             <div class="spacer"></div>
-            <a class="waves-effect waves-light btn-large green darken-1"><i class="mdi mdi-message-text-outline left"></i>PINJAM</a>
+            @if($book->status == 'Tersedia')
+            <a href="/user/pinjam/{{ $book->url_book }}" class="waves-effect waves-light btn-large green darken-2" onclick="return confirm('Yakin ingin meminjam buku ini?')"><i class="mdi mdi-message-text-outline left"></i>PINJAM</a>
+            @else
+            <a class="waves-effect waves-light btn-large deep-orange darken-4">Tidak Tersedia!</a>
+            @endif
             <div class="spacer" style="margin-top: 50px;"></div>
         </div>
         </div>
