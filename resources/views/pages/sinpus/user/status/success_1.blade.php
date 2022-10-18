@@ -9,10 +9,11 @@
         <div class="col s12">
         <img alt="image" style="width: 100%;" src="/sinpus/assets/images/done.png">
         <div class="blog-content">
-            <h5>Kamu berhasil meminjam Buku!</h5>
+            <h5>Kamu sedang dalam proses peminjaman buku!</h5>
+            <p>Silahkan menuju perpustakaan untuk mengambil buku dan meminta approval kepada petugas perpustakaan :)</p>
             <div class="spacer" style="margin-top: 10px;"></div>
             <center>
-                <a href="/user/histori" class="waves-effect waves-light btn">Selengkapnya</a>
+                <a href="/user/history" class="waves-effect waves-light btn">Selengkapnya</a>
             </center>
         </div>
         </div>

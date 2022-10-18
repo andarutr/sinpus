@@ -52,7 +52,7 @@ class BookController extends Controller
 							'author_book' => $req->author_book,
 							'description' => $req->description,
 							'publish_from' => Auth::user()->name,
-							'status' => 'Tersedia',
+							'id_statusbuku' => 1,
 							'url_book' => Str::slug($req->nm_book),
 							'created_at' => Carbon::now()->toDateTimeString(),
 							'updated_at' => Carbon::now()->toDateTimeString()
@@ -95,7 +95,6 @@ class BookController extends Controller
 								'author_book' => $req->author_book,
 								'description' => $req->description,
 								'publish_from' => Auth::user()->name,
-								'status' => 'Tersedia',
 								'url_book' => Str::slug($req->nm_book),
 								'updated_at' => Carbon::now()->toDateTimeString()
 							]);
@@ -108,7 +107,6 @@ class BookController extends Controller
 								'author_book' => $req->author_book,
 								'description' => $req->description,
 								'publish_from' => Auth::user()->name,
-								'status' => 'Tersedia',
 								'url_book' => Str::slug($req->nm_book),
 								'updated_at' => Carbon::now()->toDateTimeString()
 							]);

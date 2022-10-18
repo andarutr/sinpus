@@ -7,30 +7,36 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PinjamBukuController extends Controller
+class PengembalianBukuController extends Controller
 {
+	public function index()
+	{
+		return view('pages.sinpus.user.pengembalian-buku');
+	}
+
 	protected function store(Request $req,$url)
 	{
 		$book = \DB::table('books')
 					->where('url_book',$url)
 					->first();
 
-		if($book->id_statusbuku === 1)
+		if($book->id_statusbuku == 3)
 		{
 			$book_status = \DB::table('books')
 							->where('url_book',$url)
 							->update([
-								'id_statusbuku' => 2
+								'id_statusbuku' => 4
 							]);
-			$pinjam_buku = \DB::table('pinjam')
+			$kembalikan_buku = \DB::table('kembalikan')
 								->insert([
 									'id_user' => Auth::user()->id,
 									'id_book' => $book->id_book,
+									'tanggal_pengembalian' => Carbon::now(),
 									'updated_at' => Carbon::now()->toDateTimeString(),
 									'created_at' => Carbon::now()->toDateTimeString(),
 								]);
 								
-			return view('pages.sinpus.user.status.success_1');
+			return view('pages.sinpus.user.status.success_2');
 		}else{
 			return view('pages.sinpus.user.status.failed');
 		}

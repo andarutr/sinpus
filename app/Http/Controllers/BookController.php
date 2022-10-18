@@ -29,8 +29,9 @@ class BookController extends Controller
     public function detail($url)
     {
         $book = \DB::table('books')
-                    ->join('category', 'books.id_category', '=', 'category.id_category')
                     ->where('url_book',$url)
+                    ->join('category', 'books.id_category', '=', 'category.id_category')
+                    ->join('status_buku', 'books.id_statusbuku', '=', 'status_buku.id_statusbuku')
                     ->first();
         return view('pages.sinpus.book.detail', compact('book'));
     }

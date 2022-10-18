@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('author_book', 128);
             $table->string('publish_from', 128);
-            $table->string('status', 25);
+            $table->integer('id_statusbuku');
             $table->string('url_book', 128);
             $table->timestamps();
         });

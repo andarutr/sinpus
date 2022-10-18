@@ -1,6 +1,6 @@
 @extends('layouts.sinpus')
 
-@section('title', 'Status Berhasil')
+@section('title', 'Status Gagal')
 
 @section('content')
 <div class="container">

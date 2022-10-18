@@ -67,16 +67,16 @@
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
-            <a href="/">
-              <i class="mdi mdi-book"></i>
-              <span class="title">Wishlist</span></a>
+            <a href="/user/history">
+              <i class="mdi mdi-book-open-page-variant"></i>
+              <span class="title">Pengembalian Buku</span></a>
           </div>
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
-            <a href="/">
+            <a href="/user/history">
               <i class="mdi mdi-history"></i>
-              <span class="title">Histori</span></a>
+              <span class="title">History</span></a>
           </div>
         </li>
         <li class="lvl1 ">

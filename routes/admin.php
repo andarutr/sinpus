@@ -1,16 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// Controllers
 use App\Http\Controllers\Admin\BookController;
-use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AProfileController;
-use App\Http\Controllers\User\PinjamBukuController;
 use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\User\ChangePasswordController;
 use App\Http\Controllers\Admin\AChangePasswordController;
-
 
 Route::middleware(['auth','isAdmin'])->group(function () {
     // Route
@@ -33,16 +31,5 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/admin/category/delete/{id}', [CategoryController::class, 'destroy']);
     Route::get('/admin/inventory', [InventoryController::class, 'index']);
     Route::get('/admin/inventory/edit/{id}', [InventoryController::class, 'update']);
-});
-
-Route::middleware(['auth','isUser'])->group(function () {
-    Route::get('/user', function() {
-        return redirect('/user/profile');
-    });
-    Route::get('/user/profil', [ProfileController::class, 'show']);
-    Route::get('/user/profil/edit', [ProfileController::class, 'edit']);
-    Route::post('/user/profil/edit', [ProfileController::class, 'update']);
-    Route::get('/user/change-password', [ChangePasswordController::class, 'index']);
-    Route::post('/user/change-password', [ChangePasswordController::class, 'update']);
-    Route::get('/user/pinjam/{url}', [PinjamBukuController::class, 'store']);
+    Route::get('/admin/history', [HistoryController::class, 'index']);
 });

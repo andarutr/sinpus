@@ -1,12 +1,12 @@
 @extends('layouts.panel')
 
-@section('title', 'List Ketersediaan')
+@section('title', 'Pengembalian Buku')
 
 @section('content')
 <div class="container-xxl">
   <!-- Page Header -->
   <div class="hk-pg-header pt-7 pb-4">
-    <h1 class="pg-title">List Ketersediaan</h1>
+    <h1 class="pg-title">Pengembalian Buku</h1>
   </div>
   <!-- /Page Header -->
 
@@ -25,9 +25,6 @@
 						<tr>
 							<th>Foto</th>
 							<th>Buku</th>
-							<th>Author</th>
-							<th>Status</th>
-							<th>Updated At</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -38,17 +35,6 @@
 								<img src="/sinpus/assets/images/book/{{ $book->picture_book }}" class="img-fluid" width="80">
 							</td>
 							<td>{{ $book->nm_book }}</td>
-							<td>{{ $book->author_book }}</td>
-							<td>
-								@if($book->nm_statusbuku == 'Tersedia')
-									<span class="badge badge-blue badge-pill">{{ $book->nm_statusbuku }}</span>
-								@elseif($book->nm_statusbuku == 'Terpinjam')
-									<span class="badge badge-green badge-pill">{{ $book->nm_statusbuku }}</span>
-								@else
-									<span class="badge badge-grey badge-pill">{{ $book->nm_statusbuku }}</span>
-								@endif
-							</td>
-							<td>{{ $book->updated_at }}</td>
 							<td>
 								@if($book->id_statusbuku === 1)
 								-

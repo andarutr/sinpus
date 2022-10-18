@@ -21,20 +21,18 @@
             <img alt="image" class=" z-depth-1" style="width: 100%;" src="/sinpus/assets/images/book/{{ $book->picture_book }}">
         </a>
         <div class="blog-content">
-            @if($book->status == 'Tersedia')
-            <span class="badge blue" style="color: white;">{{ $book->status }}</span>
+            @if($book->id_statusbuku === 1)
+            <span class="badge blue" style="color: white;">{{ $book->nm_statusbuku }}</span>
             @else
-            <span class="badge red accent-2" style="color: white;">{{ $book->status }}</span>
+            <span class="badge red accent-2" style="color: white;">Tidak Tersedia</span>
             @endif
             <h5 class="title">Summary Book</h5>
             <span class="small date">Posting : {{ $book->created_at }}</span>
             <span class="small tags"><a class="small" href="#!">Author : {{ $book->author_book }}</a></span>
             <?= $book->description; ?>
             <div class="spacer"></div>
-            @if($book->status == 'Tersedia')
+            @if($book->id_statusbuku === 1)
             <a href="/user/pinjam/{{ $book->url_book }}" class="waves-effect waves-light btn-large green darken-2" onclick="return confirm('Yakin ingin meminjam buku ini?')"><i class="mdi mdi-message-text-outline left"></i>PINJAM</a>
-            @else
-            <a class="waves-effect waves-light btn-large deep-orange darken-4">Tidak Tersedia!</a>
             @endif
             <div class="spacer" style="margin-top: 50px;"></div>
         </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Okt 2022 pada 10.10
+-- Waktu pembuatan: 18 Okt 2022 pada 09.56
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -35,7 +35,7 @@ CREATE TABLE `books` (
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `author_book` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `publish_from` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_statusbuku` int(11) NOT NULL,
   `url_book` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -45,15 +45,15 @@ CREATE TABLE `books` (
 -- Dumping data untuk tabel `books`
 --
 
-INSERT INTO `books` (`id_book`, `nm_book`, `id_category`, `picture_book`, `description`, `author_book`, `publish_from`, `status`, `url_book`, `created_at`, `updated_at`) VALUES
-(1, 'Atomic Habits', 6, 'atomic-habits.jpg', '<p class=\"bot-0 text\">Tiap awal tahun kita pasti punya resolusi atau cita-cita yang harus kita capai di akhir tahun nanti. Sebagian orang ingin lebih banyak membaca buku dan berolah raga secara teratur, sebagian lain ingin memiliki skill untuk bermain piano ataupun gitar. Namun pertanyaannya adalah, berapa banyak orang yang akhirnya bisa membangun kebiasaan baik yang mereka telah tetapkan ataupun mendapatkan skill yang mereka idamkan di penghujung tahun? Tanpa saya beritahu jawabannya pun kalian pasti sudah tahu jawabannya, berkaca dari apa yang telah kita alami selama ini.</p>              <p>Membangun kebiasaan baik memang sulit untuk dilakukan, apalagi jika lingkungan sekitar kita tidak mendukung atas perubahan yang kita inginkan. James Clear, penulis asal Amerika Serikat, dalam bukunya yang berjudul Atomic Habits memberitahukan cara-cara jitu untuk melakukan hal itu. Ini mungkin bukan hasil ringkasan terbaik, but I will try my best.</p>', 'James Clear', 'Admin', 'Tersedia', 'atomic-habits', '2022-10-10 06:11:00', '2022-10-17 02:54:53'),
-(2, 'Psychology of Money', 6, 'psychology-of-money.jpg', '<p>Ketika John F. Kennedy mencalonkan diri sebagai presiden di tahun 1960, dia sempat mendapatkan pertanyaan mengenai apa yang beliau alami saat Great Depression terjadi (krisis ekonomi di tahun 1929 yang diakibatkan oleh hancurnya pasar saham). Ternyata jawaban beliau mengejutkan banyak pendengar. Beliau mengaku bahwa keluarga mereka mempunyai kekayaan yang cukup banyak di waktu itu. Sepuluh tahun setelah krisis berlalu, kekayaan mereka justru bertambah. Di tahun 1939, keluarganya memiliki lebih banyak Asisten Rumah Tangga dan mereka juga berpindah ke rumah yang lebih besar. John baru menyadari bahwa Great Depression mengacaukan keadaan ekonomi dari rakyat Amerika setelah beliau berkuliah di Harvard dan mempelajari hal tersebut. Di kala krisis, tak semua orang Amerika berada pada perahu yang sama, begitupun masyarakat di seluruh dunia.</p>\r\n<p>Seorang anak dari buruh tani dan seorang anak dari pialang saham sukses di Manhattan tak hanya memiliki jalan hidup yang berbeda &ndash; mereka juga memiliki sudut pandang yang berbeda dalam melihat risiko dan keuntungan ketika berurusan dengan pengalokasian uang. Hal yang sama juga berlaku pada orang kaya dengan pengalaman hidup yang berbeda. Contohnya, anak orang kaya yang tumbuh di masa-masa inflasi tinggi akan mempunyai pendekatan yang berbeda terhadap uang jika dibandingkan dengan orang lain yang tumbuh di saat harga-harga barang stabil meskipun mereka berdua memiliki kekayaan yang jumlahnya relatif sama. Kita semua berpikir bahwa kita tahu bagaimana cara dunia bekerja, padahal kita hanya merasakan secuil dari realitas yang terjadi di sekeliling dunia. Gunakan pendekatan &ldquo;we know less than we&rsquo;d like to think we do&rdquo; dalam memahami psikologi uang.</p>', 'Morgan Housel', 'Admin SINPUS', 'Tersedia', 'psychology-of-money', '2022-10-14 13:31:56', '2022-10-14 13:31:56'),
-(3, 'Islam Santuy Ala Gus Baha', 1, 'islam-santuy.jpg', '<p>Gus Baha adalah oase di tengah merebaknya penceramah agama &ndash;atau orang-orang yang berharap dianggap demikian&mdash;yang lebih senang menampilkan agama sebagai sesuatu yang kaku dan bahkan cenderung wagu. Mereka kerap menampilkan wajah Tuhan sebagai sosok yang kejam dan penuh ancaman, padahal Tuhan adalah Maha Pengasih lagi Maha Penyayang. Dengan penampilan dan model penyampaian yang sederhana, Gus Baha mengembalikan marwah agama yang sebenarnya, bahwa agama adalah sumber kebahagiaan. Bersama Gus Baha, agama terasa sangat mudah untuk dipahami dan diamalkan. Dan semoga dengan itu, ada banyak manfaat dan kebaikan yang bisa kita tinggalkan.&nbsp;</p>', 'Gus Baha', 'Admin SINPUS', 'Tersedia', 'islam-santuy-ala-gus-baha', '2022-10-14 13:32:28', '2022-10-17 02:54:43'),
-(4, 'The Calm Investor', 2, 'the-calm-investor.jpg', '<p>Warren Buffett, investor saham legendaris dan salah satu orang terkaya di dunia, mengatakan bahwa &ldquo;Investasi saham itu mudah kalau Anda bisa mengendalikan emosi Anda&rdquo;. Tapi pertanyaannya, bagaimana cara untuk mengendalikan emosi tersebut? Bagaimana caranya agar seorang investor bisa mengelola portofolionya tanpa perasaan cemas, deg-degan, atau gelisah? Karena sering kali, kesalahan yang dilakukan seorang investor, yang pada akhirnya menyebabkan kerugian atau berkurangnya nilai keuntungan yang diperoleh, bukan karena dia tidak tahu cara menganalisis, tapi karena ia mudah merasa panik atau serakah sehingga tidak mampu bertindak secara logis.</p>\r\n<p>Tapi sayangnya investor seperti inilah yang banyak terdapat di bursa saham di Indonesia, dan alhasil kerugian besar-besaran kemudian menjadi cerita yang biasa. The Calm Investor, sesuai judulnya, adalah buku tentang kontrol emosi dalam berinvestasi di pasar modal, yang bertujuan untuk mentransformasi Anda menjadi investor yang tenang dan sabar, tidak emosional, mampu membeli dan menjual saham berdasarkan analisis yang logis dan bukan karena perasaan takut atau serakah, dan bisa tidur nyenyak di malam hari tanpa sedikit pun khawatir soal bagaimana saham Anda keesokan harinya. Orang-orang mengatakan bahwa investasi saham itu 90% emosi dan 10% analisis, jadi, selamat! Anda baru saja menemukan buku yang mengupas tuntas bagian yang 90% tersebut.</p>', 'Teguh Hidayat', 'Admin SINPUS', 'Tersedia', 'the-calm-investor', '2022-10-14 13:43:20', '2022-10-14 13:43:20'),
-(5, 'Belajar Cepat Vuejs', 3, 'belajar-cepat-vuejs.jpg', '<p>Saat ini, ada 3 framework Javascript yang paling diminati, yaitu AngularJS, ReactJS dan Vue.js. Dalam buku ini akan membahas khusus Vue.js yang lebih unggul secara kecepatan dan performa dibandingkan framework Javascript lainnya, karena ukurannya yang kecil dan simple, namun powerfull. Selain itu, package dan plugin sudah banyak include dalam Vue.js, sehingga dapat langsung digunakan, tanpa menginstall plugin-plugin ataupun external library.</p>\r\n<p>Vue.js dibangun dengan pendekatan Approachable yang fokus pada kesederhanaan dan kerapian struktur codingnya - cukup pengetahuan dasar HTML, CSS, dan Javascript - memudahkan pengguna mempelajarinya dengan cepat.</p>', 'Lutfi Gani', 'Admin SINPUS', 'Tersedia', 'belajar-cepat-vuejs', '2022-10-14 13:45:36', '2022-10-17 03:39:17'),
-(6, 'Buku Novel KALA', 4, 'kala.jpg', '<p>Novel yang bersampulkan dominan hitam ini menceritakan kisah sejoli yang sama-sama menanam luka di hati mereka. Kedua tokoh utama tersebut bernama Lara dan Saka, masing-masing memiliki trauma pada masa lalunya, yang satu melukai, sedangkan yang satu lagi terlukai.</p>\r\n<p>Dalam penulisannya terdapat pemilihan diksi yang sangat baik, sehingga para penikmat sastra bisa menjadi refrensi untuk dibaca saat waktu senggang.</p>\r\n<p>Novel Kala ditulis oleh 2 penulis yaitu Stefani Bella dan Syahid Muhammad.</p>', 'Stefani Bella, Syahid Muhammad', 'Admin SINPUS', 'Tersedia', 'buku-novel-kala', '2022-10-14 13:49:55', '2022-10-14 13:49:55'),
-(7, 'Buku Programming Laravel Basic', 5, 'programmer-laravel-basic.jpg', '<p>Buku dengan judul &ldquo;Semua Bisa Menjadi Programmer Laravel Basic&rdquo; ini merupakan buku dasar dalam mempelajari framework PHP dengan Laravel yang saat ini sedang populer. Dengan buku ini, tandanya Anda sudah belajar sampai tingkat menengah. Akan dibahas pula kelebihan dari script server programming dengan Laravel, serta materi lengkap dari dasar hingga menengah. Keunggulan buku ini adalah dapat memandu Anda membuat program web dengan Laravel dengan database MySQL dengan pembahasan yang mudah dan sistematis sehingga Anda tidak akan kesulitan mempelajarinya. Buku ini dibagi menjadi 30 bab, disusun secara sistematis dari program yang sederhana hingga database sehingga memudahkan Anda menjadi programmer dengan Laravel. Dengan mengacu beberapa buku penulis yang best seller maka terciptalah buku ini. Dalam buku ini, penulis juga membahas proses instalasi XAMPP di dalam Lampiran. Buku ini juga dapat dipakai oleh praktisi pendidikan, karyawan, dan mahasiswa.&nbsp;</p>', 'Yuniar Supardi, Sulaeman', 'Admin SINPUS', 'Tersedia', 'buku-programming-laravel-basic', '2022-10-14 13:53:25', '2022-10-14 13:53:25'),
-(8, 'Hikayat Majapahit', 7, 'hikayat majapahit.jpg', '<p>Bersumber dari serat-serat kuno, Nino Oktorino berusaha merekonstruksi lini masa kebangkitan dan keruntuhan Majapahit, sebuah kerajaan yang bukan hanya terbesar di nusantara, tetapi juga disegani di wilayah Asia hingga China. Hikayat Majapahit berusaha memberikan dokumentasi secara objektif dan utuh mengenai kerajaan besar yang dalam historiografi nasional dianggap sebagai cikal bakal dari negara Indonesia modern. Sebuah laporan yang bukan hanya mencatat kisah para penguasa Majapahit tetapi juga kehidupan sehari-hari rakyatnya maupun hubungan kerajaan tersebut dengan dunia internasional pada zamannya. Sebuah catatan sejarah yang tidak hanya menuliskan kesohoran nama Majapahit tetapi juga borok-borok sejarahnya, mulai dari berdirinya hingga keruntuhan kerajaan tersebut.</p>', 'Nino Oktorino', 'Admin SINPUS', 'Terpinjam', 'hikayat-majapahit', '2022-10-14 14:07:08', '2022-10-14 14:07:08');
+INSERT INTO `books` (`id_book`, `nm_book`, `id_category`, `picture_book`, `description`, `author_book`, `publish_from`, `id_statusbuku`, `url_book`, `created_at`, `updated_at`) VALUES
+(1, 'Atomic Habits', 6, 'atomic-habits.jpg', '<p class=\"bot-0 text\">Tiap awal tahun kita pasti punya resolusi atau cita-cita yang harus kita capai di akhir tahun nanti. Sebagian orang ingin lebih banyak membaca buku dan berolah raga secara teratur, sebagian lain ingin memiliki skill untuk bermain piano ataupun gitar. Namun pertanyaannya adalah, berapa banyak orang yang akhirnya bisa membangun kebiasaan baik yang mereka telah tetapkan ataupun mendapatkan skill yang mereka idamkan di penghujung tahun? Tanpa saya beritahu jawabannya pun kalian pasti sudah tahu jawabannya, berkaca dari apa yang telah kita alami selama ini.</p>              <p>Membangun kebiasaan baik memang sulit untuk dilakukan, apalagi jika lingkungan sekitar kita tidak mendukung atas perubahan yang kita inginkan. James Clear, penulis asal Amerika Serikat, dalam bukunya yang berjudul Atomic Habits memberitahukan cara-cara jitu untuk melakukan hal itu. Ini mungkin bukan hasil ringkasan terbaik, but I will try my best.</p>', 'James Clear', 'Admin SINPUS', 1, 'atomic-habits', '2022-10-10 06:11:00', '2022-10-17 02:54:53'),
+(2, 'Psychology of Money', 6, 'psychology-of-money.jpg', '<p>Ketika John F. Kennedy mencalonkan diri sebagai presiden di tahun 1960, dia sempat mendapatkan pertanyaan mengenai apa yang beliau alami saat Great Depression terjadi (krisis ekonomi di tahun 1929 yang diakibatkan oleh hancurnya pasar saham). Ternyata jawaban beliau mengejutkan banyak pendengar. Beliau mengaku bahwa keluarga mereka mempunyai kekayaan yang cukup banyak di waktu itu. Sepuluh tahun setelah krisis berlalu, kekayaan mereka justru bertambah. Di tahun 1939, keluarganya memiliki lebih banyak Asisten Rumah Tangga dan mereka juga berpindah ke rumah yang lebih besar. John baru menyadari bahwa Great Depression mengacaukan keadaan ekonomi dari rakyat Amerika setelah beliau berkuliah di Harvard dan mempelajari hal tersebut. Di kala krisis, tak semua orang Amerika berada pada perahu yang sama, begitupun masyarakat di seluruh dunia.</p>\r\n<p>Seorang anak dari buruh tani dan seorang anak dari pialang saham sukses di Manhattan tak hanya memiliki jalan hidup yang berbeda &ndash; mereka juga memiliki sudut pandang yang berbeda dalam melihat risiko dan keuntungan ketika berurusan dengan pengalokasian uang. Hal yang sama juga berlaku pada orang kaya dengan pengalaman hidup yang berbeda. Contohnya, anak orang kaya yang tumbuh di masa-masa inflasi tinggi akan mempunyai pendekatan yang berbeda terhadap uang jika dibandingkan dengan orang lain yang tumbuh di saat harga-harga barang stabil meskipun mereka berdua memiliki kekayaan yang jumlahnya relatif sama. Kita semua berpikir bahwa kita tahu bagaimana cara dunia bekerja, padahal kita hanya merasakan secuil dari realitas yang terjadi di sekeliling dunia. Gunakan pendekatan &ldquo;we know less than we&rsquo;d like to think we do&rdquo; dalam memahami psikologi uang.</p>', 'Morgan Housel', 'Admin SINPUS', 1, 'psychology-of-money', '2022-10-14 13:31:56', '2022-10-14 13:31:56'),
+(3, 'Islam Santuy Ala Gus Baha', 1, 'islam-santuy.jpg', '<p>Gus Baha adalah oase di tengah merebaknya penceramah agama &ndash;atau orang-orang yang berharap dianggap demikian&mdash;yang lebih senang menampilkan agama sebagai sesuatu yang kaku dan bahkan cenderung wagu. Mereka kerap menampilkan wajah Tuhan sebagai sosok yang kejam dan penuh ancaman, padahal Tuhan adalah Maha Pengasih lagi Maha Penyayang. Dengan penampilan dan model penyampaian yang sederhana, Gus Baha mengembalikan marwah agama yang sebenarnya, bahwa agama adalah sumber kebahagiaan. Bersama Gus Baha, agama terasa sangat mudah untuk dipahami dan diamalkan. Dan semoga dengan itu, ada banyak manfaat dan kebaikan yang bisa kita tinggalkan.&nbsp;</p>', 'Gus Baha', 'Admin SINPUS', 1, 'islam-santuy-ala-gus-baha', '2022-10-14 13:32:28', '2022-10-17 02:54:43'),
+(4, 'The Calm Investor', 2, 'the-calm-investor.jpg', '<p>Warren Buffett, investor saham legendaris dan salah satu orang terkaya di dunia, mengatakan bahwa &ldquo;Investasi saham itu mudah kalau Anda bisa mengendalikan emosi Anda&rdquo;. Tapi pertanyaannya, bagaimana cara untuk mengendalikan emosi tersebut? Bagaimana caranya agar seorang investor bisa mengelola portofolionya tanpa perasaan cemas, deg-degan, atau gelisah? Karena sering kali, kesalahan yang dilakukan seorang investor, yang pada akhirnya menyebabkan kerugian atau berkurangnya nilai keuntungan yang diperoleh, bukan karena dia tidak tahu cara menganalisis, tapi karena ia mudah merasa panik atau serakah sehingga tidak mampu bertindak secara logis.</p>\r\n<p>Tapi sayangnya investor seperti inilah yang banyak terdapat di bursa saham di Indonesia, dan alhasil kerugian besar-besaran kemudian menjadi cerita yang biasa. The Calm Investor, sesuai judulnya, adalah buku tentang kontrol emosi dalam berinvestasi di pasar modal, yang bertujuan untuk mentransformasi Anda menjadi investor yang tenang dan sabar, tidak emosional, mampu membeli dan menjual saham berdasarkan analisis yang logis dan bukan karena perasaan takut atau serakah, dan bisa tidur nyenyak di malam hari tanpa sedikit pun khawatir soal bagaimana saham Anda keesokan harinya. Orang-orang mengatakan bahwa investasi saham itu 90% emosi dan 10% analisis, jadi, selamat! Anda baru saja menemukan buku yang mengupas tuntas bagian yang 90% tersebut.</p>', 'Teguh Hidayat', 'Admin SINPUS', 1, 'the-calm-investor', '2022-10-14 13:43:20', '2022-10-14 13:43:20'),
+(5, 'Belajar Cepat Vuejs', 3, 'belajar-cepat-vuejs.jpg', '<p>Saat ini, ada 3 framework Javascript yang paling diminati, yaitu AngularJS, ReactJS dan Vue.js. Dalam buku ini akan membahas khusus Vue.js yang lebih unggul secara kecepatan dan performa dibandingkan framework Javascript lainnya, karena ukurannya yang kecil dan simple, namun powerfull. Selain itu, package dan plugin sudah banyak include dalam Vue.js, sehingga dapat langsung digunakan, tanpa menginstall plugin-plugin ataupun external library.</p>\r\n<p>Vue.js dibangun dengan pendekatan Approachable yang fokus pada kesederhanaan dan kerapian struktur codingnya - cukup pengetahuan dasar HTML, CSS, dan Javascript - memudahkan pengguna mempelajarinya dengan cepat.</p>', 'Lutfi Gani', 'Admin SINPUS', 1, 'belajar-cepat-vuejs', '2022-10-14 13:45:36', '2022-10-18 07:47:36'),
+(6, 'Buku Novel KALA', 4, 'kala.jpg', '<p>Novel yang bersampulkan dominan hitam ini menceritakan kisah sejoli yang sama-sama menanam luka di hati mereka. Kedua tokoh utama tersebut bernama Lara dan Saka, masing-masing memiliki trauma pada masa lalunya, yang satu melukai, sedangkan yang satu lagi terlukai.</p>\r\n<p>Dalam penulisannya terdapat pemilihan diksi yang sangat baik, sehingga para penikmat sastra bisa menjadi refrensi untuk dibaca saat waktu senggang.</p>\r\n<p>Novel Kala ditulis oleh 2 penulis yaitu Stefani Bella dan Syahid Muhammad.</p>', 'Stefani Bella, Syahid Muhammad', 'Admin SINPUS', 1, 'buku-novel-kala', '2022-10-14 13:49:55', '2022-10-18 06:03:27'),
+(7, 'Buku Programming Laravel Basic', 5, 'programmer-laravel-basic.jpg', '<p>Buku dengan judul &ldquo;Semua Bisa Menjadi Programmer Laravel Basic&rdquo; ini merupakan buku dasar dalam mempelajari framework PHP dengan Laravel yang saat ini sedang populer. Dengan buku ini, tandanya Anda sudah belajar sampai tingkat menengah. Akan dibahas pula kelebihan dari script server programming dengan Laravel, serta materi lengkap dari dasar hingga menengah. Keunggulan buku ini adalah dapat memandu Anda membuat program web dengan Laravel dengan database MySQL dengan pembahasan yang mudah dan sistematis sehingga Anda tidak akan kesulitan mempelajarinya. Buku ini dibagi menjadi 30 bab, disusun secara sistematis dari program yang sederhana hingga database sehingga memudahkan Anda menjadi programmer dengan Laravel. Dengan mengacu beberapa buku penulis yang best seller maka terciptalah buku ini. Dalam buku ini, penulis juga membahas proses instalasi XAMPP di dalam Lampiran. Buku ini juga dapat dipakai oleh praktisi pendidikan, karyawan, dan mahasiswa.&nbsp;</p>', 'Yuniar Supardi, Sulaeman', 'Admin SINPUS', 1, 'buku-programming-laravel-basic', '2022-10-14 13:53:25', '2022-10-18 07:49:42'),
+(8, 'Hikayat Majapahit', 7, 'hikayat majapahit.jpg', '<p>Bersumber dari serat-serat kuno, Nino Oktorino berusaha merekonstruksi lini masa kebangkitan dan keruntuhan Majapahit, sebuah kerajaan yang bukan hanya terbesar di nusantara, tetapi juga disegani di wilayah Asia hingga China. Hikayat Majapahit berusaha memberikan dokumentasi secara objektif dan utuh mengenai kerajaan besar yang dalam historiografi nasional dianggap sebagai cikal bakal dari negara Indonesia modern. Sebuah laporan yang bukan hanya mencatat kisah para penguasa Majapahit tetapi juga kehidupan sehari-hari rakyatnya maupun hubungan kerajaan tersebut dengan dunia internasional pada zamannya. Sebuah catatan sejarah yang tidak hanya menuliskan kesohoran nama Majapahit tetapi juga borok-borok sejarahnya, mulai dari berdirinya hingga keruntuhan kerajaan tersebut.</p>', 'Nino Oktorino', 'Admin SINPUS', 1, 'hikayat-majapahit', '2022-10-14 14:07:08', '2022-10-18 07:49:47');
 
 -- --------------------------------------------------------
 
@@ -146,6 +146,13 @@ CREATE TABLE `kembalikan` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `kembalikan`
+--
+
+INSERT INTO `kembalikan` (`id_kembalikan`, `id_user`, `id_book`, `tanggal_pengembalian`, `created_at`, `updated_at`) VALUES
+(2, 2, 5, '2022-10-18', '2022-10-18 07:46:53', '2022-10-18 07:46:53');
+
 -- --------------------------------------------------------
 
 --
@@ -220,13 +227,6 @@ CREATE TABLE `pinjam` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data untuk tabel `pinjam`
---
-
-INSERT INTO `pinjam` (`id_pinjam`, `id_user`, `id_book`, `duration`, `created_at`, `updated_at`) VALUES
-(1, 2, 8, NULL, '2022-10-17 08:00:53', '2022-10-17 08:00:53');
-
 -- --------------------------------------------------------
 
 --
@@ -237,6 +237,27 @@ CREATE TABLE `roles` (
   `id_role` int(10) UNSIGNED NOT NULL,
   `nm_role` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `status_buku`
+--
+
+CREATE TABLE `status_buku` (
+  `id_statusbuku` int(11) NOT NULL,
+  `nm_statusbuku` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `status_buku`
+--
+
+INSERT INTO `status_buku` (`id_statusbuku`, `nm_statusbuku`) VALUES
+(1, 'Tersedia'),
+(2, 'Proses Peminjaman'),
+(3, 'Terpinjam'),
+(4, 'Proses Pengembalian');
 
 -- --------------------------------------------------------
 
@@ -264,8 +285,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `picture`, `phone_number`, `id_kelas`, `id_role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin SINPUS', 'admin@pbs2app.my.id', NULL, '$2y$10$si/CD0.oDaGtTgD2rDm8FO0htz5OIvxXDIVCNhGLThT7OjN4SwtYa', 'modern-abstract-geometric-background-free-vector.jpg', '123123123', 16, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40'),
-(2, 'Andaru Triadi', 'andarutr@gmail.com', '2022-10-17 01:28:50', '$2y$10$jlJak/zdh7zNJOqldrnvmek48tOCMApFWKj.2TmJgV5WnsQN.ROwG', 'user.jpg', NULL, 16, 2, NULL, '2022-10-17 01:27:14', '2022-10-17 01:28:50');
+(1, 'Admin SINPUS', 'admin@pbs2app.my.id', NULL, '$2y$10$si/CD0.oDaGtTgD2rDm8FO0htz5OIvxXDIVCNhGLThT7OjN4SwtYa', 'modern-abstract-geometric-background-free-vector.jpg', '123123123', 16, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40');
 
 -- --------------------------------------------------------
 
@@ -349,6 +369,12 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id_role`);
 
 --
+-- Indeks untuk tabel `status_buku`
+--
+ALTER TABLE `status_buku`
+  ADD PRIMARY KEY (`id_statusbuku`);
+
+--
 -- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
@@ -393,7 +419,7 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT untuk tabel `kembalikan`
 --
 ALTER TABLE `kembalikan`
-  MODIFY `id_kembalikan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kembalikan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -411,7 +437,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `pinjam`
 --
 ALTER TABLE `pinjam`
-  MODIFY `id_pinjam` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pinjam` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `roles`
@@ -420,10 +446,16 @@ ALTER TABLE `roles`
   MODIFY `id_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `status_buku`
+--
+ALTER TABLE `status_buku`
+  MODIFY `id_statusbuku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `wishlist`

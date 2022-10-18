@@ -85,6 +85,14 @@
 							<span class="nav-link-text">Ketersediaan</span>
 						</a>
 					</li>
+					<li class="nav-item @if($menu == 'History') active @endif">
+						<a class="nav-link" href="/admin/history">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">history</i>
+							</span>
+							<span class="nav-link-text">History</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div class="menu-gap"></div>
@@ -116,6 +124,14 @@
 								<i class="material-icons">lock</i>
 							</span>
 							<span class="nav-link-text">Change Password</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/user/history">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">history</i>
+							</span>
+							<span class="nav-link-text">History</span>
 						</a>
 					</li>	
 				</ul>
