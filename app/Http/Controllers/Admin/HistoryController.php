@@ -16,8 +16,13 @@ class HistoryController extends Controller
 								->join('status_buku', 'books.id_statusbuku', '=', 'status_buku.id_statusbuku')
 								->join('users','pinjam.id_user','=','users.id')
 								->get();
+		$histories_pengembalian = \DB::table('kembalikan')
+									->orderByDesc('id_kembalikan')
+									->join('books','kembalikan.id_book','=','books.id_book')
+									->join('users','kembalikan.id_user','=','users.id')
+									->get();
 		$pinjam = \DB::table('pinjam')->get();
 
-		return view('pages.admin.history.list', compact('menu','histories_pinjam','pinjam'));
+		return view('pages.admin.history.list', compact('menu','histories_pinjam','histories_pengembalian','pinjam'));
 	}
 }

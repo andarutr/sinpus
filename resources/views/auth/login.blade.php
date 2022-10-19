@@ -57,5 +57,9 @@
             </div>
         </form>
         <p>Belum memiliki akun? <a href="/register" style="color: blue;">Register</a></p>
+        <br>
+        <center>
+            <p>OR<a href="/auth/redirect" style="color: blue;"><img src="https://1000logos.net/wp-content/uploads/2016/11/google-logo.jpg" width="150"></a></p>
+        </center>
     </x-auth-card>
 </x-guest-layout>

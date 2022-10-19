@@ -28,7 +28,9 @@
 						@foreach($histories_pinjam as $history)
 						<tr>
 							<td>
-								<img src="/sinpus/assets/images/book/{{ $history->picture_book }}" class="img-fluid" width="80">
+								<a href="/sinpus/assets/images/book/{{ $history->picture_book }}" data-fancybox>
+									<img src="/sinpus/assets/images/book/{{ $history->picture_book }}" class="img-fluid" width="80">
+								</a>
 							</td>
 							<td>{{ $history->nm_book }}</td>
 							<td>{{ $history->nm_statusbuku }}</td>
@@ -46,12 +48,45 @@
     <h1 class="pg-title">History Pengembalian Buku</h1>
   </div>
 
+  <div class="hk-pg-body">
+    <div class="row">
+      <div class="col-lg-11 col-sm-9 col-12">
+				<table id="example" class="table table-striped table-responsive">
+					<thead>
+						<tr>
+							<th>Foto</th>
+							<th>Buku</th>
+							<th>Dipinjam Oleh</th>
+							<th>Tanggal Pengembalian</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($histories_pengembalian as $history)
+						<tr>
+							<td>
+								<a href="/sinpus/assets/images/book/{{ $history->picture_book }}" data-fancybox>
+									<img src="/sinpus/assets/images/book/{{ $history->picture_book }}" class="img-fluid" width="80">
+								</a>
+							</td>
+							<td>{{ $history->nm_book }}</td>
+							<td>{{ $history->name }}</td>
+							<td>
+								{{ $history->tanggal_pengembalian }}
+							</td>
+						</tr>
+						@endforeach
+				</table>
+      </div>
+    </div>
+  </div>
+
 </div>
 @endsection
 
 @push('styles')
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
 @endpush
 
 @push('scripts')
@@ -64,4 +99,5 @@ $(document).ready(function () {
     $('#example').DataTable();
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 @endpush

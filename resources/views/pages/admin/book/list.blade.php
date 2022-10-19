@@ -46,7 +46,9 @@
 						@foreach($books as $book)
 						<tr>
 							<td>
-								<img src="/sinpus/assets/images/book/{{ $book->picture_book }}" class="img-fluid" width="80">
+								<a href="/sinpus/assets/images/book/{{ $book->picture_book }}" data-fancybox>
+									<img src="/sinpus/assets/images/book/{{ $book->picture_book }}" class="img-fluid" width="80">
+								</a>
 							</td>
 							<td>{{ $book->nm_book }}</td>
 							<td>{{ $book->author_book }}</td>
@@ -69,6 +71,7 @@
 @push('styles')
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
 @endpush
 
 @push('scripts')
@@ -81,4 +84,5 @@ $(document).ready(function () {
     $('#example').DataTable();
 });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 @endpush
