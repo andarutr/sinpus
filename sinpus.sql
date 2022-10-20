@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2022 at 06:52 AM
+-- Generation Time: Oct 20, 2022 at 08:54 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -146,14 +146,6 @@ CREATE TABLE `kembalikan` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `kembalikan`
---
-
-INSERT INTO `kembalikan` (`id_kembalikan`, `id_user`, `id_book`, `tanggal_pengembalian`, `created_at`, `updated_at`) VALUES
-(2, 2, 5, '2022-10-19', '2022-10-19 02:11:43', '2022-10-19 02:11:43'),
-(3, 4, 5, '2022-10-20', '2022-10-20 02:00:53', '2022-10-20 02:00:53');
-
 -- --------------------------------------------------------
 
 --
@@ -252,15 +244,6 @@ CREATE TABLE `pinjam` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `pinjam`
---
-
-INSERT INTO `pinjam` (`id_pinjam`, `id_user`, `id_book`, `duration`, `created_at`, `updated_at`) VALUES
-(1, 2, 5, NULL, '2022-10-19 02:25:00', '2022-10-19 02:25:00'),
-(2, 4, 5, NULL, '2022-10-20 01:59:07', '2022-10-20 01:59:07'),
-(3, 2, 7, NULL, '2022-10-20 03:01:35', '2022-10-20 03:01:35');
-
 -- --------------------------------------------------------
 
 --
@@ -271,6 +254,14 @@ CREATE TABLE `roles` (
   `id_role` int(10) UNSIGNED NOT NULL,
   `nm_role` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id_role`, `nm_role`) VALUES
+(1, 'Admin'),
+(2, 'User');
 
 -- --------------------------------------------------------
 
@@ -319,22 +310,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `picture`, `phone_number`, `id_kelas`, `id_role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin SINPUS', 'admin@pbs2app.my.id', '2022-10-19 07:44:41', '$2y$10$si/CD0.oDaGtTgD2rDm8FO0htz5OIvxXDIVCNhGLThT7OjN4SwtYa', 'modern-abstract-geometric-background-free-vector.jpg', '', 16, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40'),
-(2, 'Andaru Triadi', 'andarutr@gmail.com', '2022-10-19 07:44:41', '$2a$12$m.354xyjtf8zRh9S8aomxOLqJ6g0f0WR0UmCz0.p/NBM3uN0UVcMe', 'user.jpg', NULL, 16, 2, NULL, '2022-10-19 07:43:53', '2022-10-19 07:44:41');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `wishlist`
---
-
-CREATE TABLE `wishlist` (
-  `id_wishlist` int(10) UNSIGNED NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `id_book` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+(1, 'Admin SINPUS', 'admin@pbs2app.my.id', '2022-10-19 07:44:41', '$2y$10$si/CD0.oDaGtTgD2rDm8FO0htz5OIvxXDIVCNhGLThT7OjN4SwtYa', 'modern-abstract-geometric-background-free-vector.jpg', '', 16, 1, NULL, '2022-10-09 21:14:40', '2022-10-09 21:14:40');
 
 --
 -- Indexes for dumped tables
@@ -423,12 +399,6 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `wishlist`
---
-ALTER TABLE `wishlist`
-  ADD PRIMARY KEY (`id_wishlist`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -460,7 +430,7 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `kembalikan`
 --
 ALTER TABLE `kembalikan`
-  MODIFY `id_kembalikan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kembalikan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `meringkas`
@@ -484,13 +454,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `pinjam`
 --
 ALTER TABLE `pinjam`
-  MODIFY `id_pinjam` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pinjam` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_role` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `status_buku`
@@ -502,13 +472,7 @@ ALTER TABLE `status_buku`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `wishlist`
---
-ALTER TABLE `wishlist`
-  MODIFY `id_wishlist` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

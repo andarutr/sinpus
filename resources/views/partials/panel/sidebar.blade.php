@@ -85,6 +85,14 @@
 							<span class="nav-link-text">Ketersediaan</span>
 						</a>
 					</li>
+					<li class="nav-item @if($menu == 'Ringkasan') active @endif">
+						<a class="nav-link" href="/admin/ringkasan">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">edit</i>
+							</span>
+							<span class="nav-link-text">Ringkasan</span>
+						</a>
+					</li>
 					<li class="nav-item @if($menu == 'History') active @endif">
 						<a class="nav-link" href="/admin/history">
 							<span class="nav-icon-wrap">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Admin\HistoryController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\AProfileController;
+use App\Http\Controllers\Admin\RingkasanController;
 use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AChangePasswordController;
@@ -32,4 +33,6 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/admin/inventory', [InventoryController::class, 'index']);
     Route::get('/admin/inventory/edit/{id}', [InventoryController::class, 'update']);
     Route::get('/admin/history', [HistoryController::class, 'index']);
+    Route::get('/admin/ringkasan', [RingkasanController::class, 'index']);
+    Route::get('/admin/ringkasan/view/{id}', [RingkasanController::class, 'show']);
 });
