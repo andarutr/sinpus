@@ -81,7 +81,7 @@
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
-            <a href="/">
+            <a href="/user/meringkas">
               <i class="mdi mdi-pen"></i>
               <span class="title">Meringkas</span></a>
           </div>

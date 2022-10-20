@@ -127,6 +127,14 @@
 						</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="/user/meringkas">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">edit</i>
+							</span>
+							<span class="nav-link-text">Meringkas</span>
+						</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="/user/history">
 							<span class="nav-icon-wrap">
 								<i class="material-icons">history</i>
