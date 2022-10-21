@@ -143,6 +143,14 @@
 						</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="/user/poinku">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">polymer</i>
+							</span>
+							<span class="nav-link-text">Poinku</span>
+						</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="/user/meringkas">
 							<span class="nav-icon-wrap">
 								<i class="material-icons">edit</i>

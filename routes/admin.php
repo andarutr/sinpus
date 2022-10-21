@@ -36,6 +36,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/admin/history', [HistoryController::class, 'index']);
     Route::get('/admin/ringkasan', [RingkasanController::class, 'index']);
     Route::get('/admin/ringkasan/view/{id}', [RingkasanController::class, 'show']);
+    Route::get('/admin/ringkasan/delete/{id}', [RingkasanController::class, 'destroy']);
     Route::get('/admin/poinku', [PoinkuController::class, 'index']);
     Route::post('/admin/pointku/create', [PoinkuController::class, 'store']);
     Route::get('/admin/pointku/delete/{id}', [PoinkuController::class, 'destroy']);

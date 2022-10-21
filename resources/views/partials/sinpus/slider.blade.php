@@ -67,6 +67,13 @@
         </li>
         <li class="lvl1 ">
           <div class=" waves-effect index">
+            <a href="/user/poinku">
+              <i class="mdi mdi-coin"></i>
+              <span class="title">Poinku</span></a>
+          </div>
+        </li>
+        <li class="lvl1 ">
+          <div class=" waves-effect index">
             <a href="/user/history">
               <i class="mdi mdi-book-open-page-variant"></i>
               <span class="title">Pengembalian Buku</span></a>

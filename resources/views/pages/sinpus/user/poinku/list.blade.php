@@ -1,12 +1,13 @@
 @extends('layouts.panel')
 
-@section('title', 'List Ringkasan')
+@section('title', 'List Poinku')
 
 @section('content')
 <div class="container-xxl">
   <!-- Page Header -->
   <div class="hk-pg-header pt-7 pb-4">
-    <h1 class="pg-title">List Ringkasan</h1>
+    <h1 class="pg-title">List Poinku</h1>
+    <p>Total Point: {{ $total_point }}</p>
   </div>
   <!-- /Page Header -->
 
@@ -14,43 +15,27 @@
   <div class="hk-pg-body">
     <div class="row">
       <div class="col-lg-11 col-sm-9 col-12">
-      	@if(session('success_ringkasan_delete'))
-	      <div class="alert alert-success alert-wth-icon alert-dismissible fade show mt-3 mb-3" role="alert">
-	        <span class="alert-icon-wrap"><i class="zmdi zmdi-check-circle"></i></span> {{ session('success_ringkasan_delete') }}
-	        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-	      </div>
-	      @endif
+      	
 				<table id="example" class="table table-striped table-responsive">
 					<thead>
 						<tr>
 							<th>Foto</th>
-							<th>Nama</th>
 							<th>Buku</th>
-							<th>Deskripsi</th>
+							<th>Point</th>
 							<th>Updated At</th>
-							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($peringkas as $pks)
+						@foreach($poinku as $pku)
 						<tr>
 							<td>
-								<a href="/sinpus/assets/images/profile/{{ $pks->picture }}" data-fancybox>
-									<img src="/sinpus/assets/images/profile/{{ $pks->picture }}" class="img-fluid" width="80">
+								<a href="/sinpus/assets/images/book/{{ $pku->picture_book }}" data-fancybox>
+									<img src="/sinpus/assets/images/book/{{ $pku->picture_book }}" class="img-fluid" width="80">
 								</a>
 							</td>
-							<td>{{ $pks->name }}</td>
-							<td>{{ $pks->nm_book }}</td>
-							<td><?= Str::limit($pks->ringkasan,100); ?></td>
-							<td>{{ $pks->updated_at }}</td>
-							<td>
-								<a href="/admin/ringkasan/view/{{ $pks->id_meringkas }}" class="btn btn-primary btn-animated">
-									<i data-feather="eye"></i>
-								</a>
-								<a href="/admin/ringkasan/delete/{{ $pks->id_meringkas }}" class="btn btn-danger btn-animated" onclick="return confirm('Yakin ingin menghapus data?')">
-									<i class="material-icons">delete</i>
-								</a>
-							</td>
+							<td>{{ $pku->nm_book }}</td>
+							<td>{{ $pku->pointku }}</td>
+							<td>{{ $pku->updated_at }}</td>
 						</tr>
 						@endforeach
 				</table>

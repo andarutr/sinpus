@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\PoinkuController;
 use App\Http\Controllers\User\HistoryController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\MeringkasController;
@@ -25,4 +26,5 @@ Route::middleware(['auth','isUser'])->group(function () {
     Route::post('/user/meringkas-buku/{url}', [MeringkasController::class, 'store']);
     Route::get('/user/meringkas-buku/edit/{url}', [MeringkasController::class, 'edit']);
     Route::post('/user/meringkas-buku/edit/{url}', [MeringkasController::class, 'update']);
+    Route::get('/user/poinku', [PoinkuController::class, 'index']);
 });
