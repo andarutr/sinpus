@@ -93,6 +93,14 @@
 							<span class="nav-link-text">Ringkasan</span>
 						</a>
 					</li>
+					<li class="nav-item @if($menu == 'Poinku') active @endif">
+						<a class="nav-link" href="/admin/poinku">
+							<span class="nav-icon-wrap">
+								<i class="material-icons">polymer</i>
+							</span>
+							<span class="nav-link-text">Poinku</span>
+						</a>
+					</li>
 					<li class="nav-item @if($menu == 'History') active @endif">
 						<a class="nav-link" href="/admin/history">
 							<span class="nav-icon-wrap">

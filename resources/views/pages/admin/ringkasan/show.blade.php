@@ -30,7 +30,9 @@
                           <h6>{{ $peringkas->nm_book }}</h6>
                           <p>{{ $peringkas->author_book }}</p>
                           <p>{{ $peringkas->name }}</p>
-                          <button type="button" class="btn btn-sm btn-success mt-2">NILAI</button>
+                          <button type="button" class="btn btn-sm btn-success mt-2" data-bs-toggle="modal" data-bs-target="#givePoin">
+                            Berikan Poin
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -55,3 +57,34 @@
   <!-- /Page Body -->   
 </div>
 @endsection
+
+<!-- Modal forms-->
+<div class="modal fade" id="givePoin" tabindex="-1" role="dialog" aria-labelledby="givePoin" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Poinku</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/admin/pointku/create" method="POST">
+          @csrf
+          <input type="hidden" name="id_user" value="{{ $peringkas->id }}">
+          <input type="hidden" name="id_book" value="{{ $peringkas->id_book }}">
+          <input type="hidden" name="id_meringkas" value="{{ $peringkas->id_meringkas }}">
+          <div class="mb-3">
+            <label class="form-label" for="name">Nama</label>
+            <input type="text" class="form-control" id="name" value="{{ $peringkas->name }}" disabled>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="poin">Point</label>
+            <input type="number" class="form-control" id="poin" name="poinku" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

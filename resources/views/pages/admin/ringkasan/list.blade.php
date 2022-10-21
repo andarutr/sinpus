@@ -38,7 +38,9 @@
 							<td><?= Str::limit($pks->ringkasan,100); ?></td>
 							<td>{{ $pks->updated_at }}</td>
 							<td>
-								<a href="/admin/ringkasan/view/{{ $pks->id_meringkas }}" class="btn btn-primary btn-animated">Lihat</a>
+								<a href="/admin/ringkasan/view/{{ $pks->id_meringkas }}" class="btn btn-primary btn-animated">
+									<i data-feather="eye"></i>
+								</a>
 							</td>
 						</tr>
 						@endforeach

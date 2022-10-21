@@ -17,6 +17,64 @@
 						<h6 class="dropdown-header px-4 fs-6">Notifications<a href="#" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"><span class="icon"><span class="feather-icon"><i data-feather="settings"></i></span></span></a>
 						</h6>
 						<div data-simplebar class="dropdown-body  p-2">
+							@php
+							$notif_pinjam = \DB::table('pinjam')
+											->orderByDesc('id_pinjam')
+											->join('users','pinjam.id_user','=','users.id')
+											->join('books','pinjam.id_book','=','books.id_book')
+											->select('pinjam.*','books.nm_book','users.name')
+											->limit(5)
+											->get();
+							$notif_ringkasan = \DB::table('meringkas')
+												->orderByDesc('id_meringkas')
+												->join('users','meringkas.id_user','=','users.id')
+												->join('books','meringkas.id_book','=','books.id_book')
+												->select('meringkas.*','books.nm_book','users.name')
+												->limit(5)
+												->get();
+							@endphp
+							@foreach($notif_ringkasan as $new)
+							<a href="javascript:void(0);" class="dropdown-item">
+								<div class="media">
+									<div class="media-head">
+										<div class="avatar  avatar-icon avatar-sm avatar-info avatar-rounded">
+											<span class="initial-wrap">
+												<span class="feather-icon"><i data-feather="book-open"></i></span>
+											</span>
+										</div>
+									</div>
+									<div class="media-body">
+										<div>
+											<div class="notifications-text">{{ $new->name }} telah meringkas buku {{ $new->nm_book }}</div>
+											<div class="notifications-info">
+												<div class="notifications-time">{{ $new->created_at }}</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							@endforeach
+							@foreach($notif_pinjam as $new)
+							<a href="javascript:void(0);" class="dropdown-item">
+								<div class="media">
+									<div class="media-head">
+										<div class="avatar  avatar-icon avatar-sm avatar-primary avatar-rounded">
+											<span class="initial-wrap">
+												<span class="feather-icon"><i data-feather="user-check"></i></span>
+											</span>
+										</div>
+									</div>
+									<div class="media-body">
+										<div>
+											<div class="notifications-text">{{ $new->name }} ingin meminjam buku {{ $new->nm_book }}</div>
+											<div class="notifications-info">
+												<div class="notifications-time">{{ $new->created_at }}</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</a>
+							@endforeach
 							<a href="javascript:void(0);" class="dropdown-item">
 								<div class="media">
 									<div class="media-head">
