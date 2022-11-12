@@ -7,4 +7,5 @@
 
 <!-- CSS -->
 <link href="/panel/dist/css/style.css" rel="stylesheet" type="text/css">
+@livewireStyles
 @stack('styles')

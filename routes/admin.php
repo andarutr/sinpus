@@ -16,9 +16,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     // Route
     Route::get('/admin', [DashboardController::class, 'index']);
     Route::get('/admin/profil/edit', [AProfileController::class, 'edit']);
-    Route::post('/admin/profil/edit', [AProfileController::class, 'update']);
     Route::get('/admin/change-password', [AChangePasswordController::class, 'index']);
-    Route::post('/admin/change-password', [AChangePasswordController::class, 'update']);
     Route::get('/admin/book', [BookController::class, 'index']);
     Route::get('/admin/book/create', [BookController::class, 'create'])->name('book-create');
     Route::post('/admin/book/create', [BookController::class, 'store']);

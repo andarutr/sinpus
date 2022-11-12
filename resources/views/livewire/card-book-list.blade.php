@@ -1,15 +1,6 @@
-@extends('layouts.sinpus')
-
-@section('title', 'Kategori ' . $category->nm_category)
-
-@section('content')
-<div class="divider"></div>
-<div class="row ">
-	<div class="col s12 pad-0">
-		<h5 class="bot-20 sec-tit center ">Buku {{ $category->nm_category }}!</h5>
-		<div class="row settings-row ">
+<div>
+    <div class="row settings-row ">
         @foreach($books as $book)
-        @if($book->url_category == $category->url_category)
         <div class="col s6 ">
             <div class="setting-box">
                 <div class="card">
@@ -24,10 +15,6 @@
                 </div>
             </div>
         </div>
-        @endif
         @endforeach
     </div>
-	</div>
 </div>
-<div class="divider"></div>
-@endsection

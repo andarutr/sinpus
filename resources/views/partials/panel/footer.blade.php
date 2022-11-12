@@ -18,3 +18,4 @@
 <script src="/panel/dist/js/init.js"></script>
 <script src="/panel/dist/js/chips-init.js"></script>
 <script src="/panel/dist/js/dashboard-data.js"></script>
+@livewireScripts
