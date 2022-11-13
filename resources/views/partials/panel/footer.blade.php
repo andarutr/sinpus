@@ -12,10 +12,10 @@
 
 <!-- Simplebar JS -->
 <script src="/panel/vendors/simplebar/dist/simplebar.min.js"></script>
-@stack('scripts')
 
 <!-- Init JS -->
 <script src="/panel/dist/js/init.js"></script>
 <script src="/panel/dist/js/chips-init.js"></script>
-<script src="/panel/dist/js/dashboard-data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 @livewireScripts
+@stack('scripts')

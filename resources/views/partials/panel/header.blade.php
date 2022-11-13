@@ -7,5 +7,6 @@
 
 <!-- CSS -->
 <link href="/panel/dist/css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
 @livewireStyles
 @stack('styles')
