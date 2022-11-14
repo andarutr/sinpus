@@ -18,6 +18,7 @@ class AProfileController extends Controller
                     ->select('users.*', 'kelas.*')
                     ->first();
         $kelas = \DB::table('kelas')->get();
+
         return view('pages.admin.edit-profile', compact('menu','user','kelas'));
     }
 
@@ -55,7 +56,6 @@ class AProfileController extends Controller
         }
         
 
-        return redirect()->back()->with('success_edit_profile', 'Berhasil edit profil!');
-
+        return redirect()->back()->with('success_update', 'Berhasil memperbarui data!');
     }
 }

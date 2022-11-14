@@ -1,6 +1,6 @@
 @extends('layouts.panel')
 
-@section('title', 'Edit Profile User')
+@section('title', 'Edit Profile')
 
 @section('content')
 <div class="container-xxl">
@@ -12,18 +12,14 @@
 
   <!-- Page Body -->
   <div class="hk-pg-body">
+    @if(session()->flash('success_update'))
+    <livewire:notifications.success-update />
+    @endif
     <div class="row edit-profile-wrap">
       <div class="col-lg-12 col-sm-9 col-12">
         <div class="tab-content">
           <div class="tab-pane fade show active" id="tab_block_1">
             <form action="/admin/profil/edit" method="POST" enctype="multipart/form-data">@csrf
-              <div class="row gx-3">
-                @if(session('success_edit_profile'))
-                <div class="alert alert-primary alert-wth-icon alert-dismissible fade show" role="alert">
-                  <span class="alert-icon-wrap"><i class="zmdi zmdi-check-circle"></i></span> {{ session('success_edit_profile') }}
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                @endif
                 <div class="col-sm-12">
                   <div class="form-group">
                     <div class="media align-items-center">
@@ -37,9 +33,6 @@
                           Upload Photo
                           <input type="file" class="upload" name="picture">
                         </div>
-                        <div class="form-text text-muted">
-                          For better preview recommended size is 450px x 450px. Max size 5mb.
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -50,7 +43,7 @@
                 <div class="col-sm-6">
                   <div class="form-group">
                     <label class="form-label">Nama Lengkap</label>
-                    <input class="form-control" type="text" name="name" value="{{ $user->name }}">
+                    <input class="form-control" type="text" name="name" value="{{ Auth::user()->name }}">
                     @error('name')<p class="text-danger">{{ $message }}</p>@enderror
                   </div>
                 </div>
