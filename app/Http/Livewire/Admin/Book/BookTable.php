@@ -30,6 +30,7 @@ class BookTable extends Component
                     ->paginate($this->paginate);
         $search = \DB::table('books')
                     ->where('nm_book','like','%'.$this->search.'%')
+                    ->orwhere('author_book','like','%'.$this->search.'%')
                     ->paginate($this->paginate);
         return view('livewire.admin.book.book-table', [
             'books' => $this->search === null ? $books : $search
