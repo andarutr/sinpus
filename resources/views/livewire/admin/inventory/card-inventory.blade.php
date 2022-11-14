@@ -27,7 +27,7 @@
         @if(session()->has('success_update'))
           <livewire:notifications.success-update />
           @endif
-                <table id="example" class="table table-striped table-responsive">
+                <table class="table table-striped table-responsive">
                     <thead>
                         <tr>
                             <th>Foto</th>

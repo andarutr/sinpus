@@ -16,7 +16,7 @@
     </div>
     <div class="row">
       <div class="col-lg-11 col-sm-9 col-12">
-        <table id="example" class="table table-striped table-responsive">
+        <table class="table table-striped table-responsive">
             <thead>
                 <tr>
                     <th>Foto</th>
@@ -30,7 +30,7 @@
                 <tr>
                     <td>
                         <a href="/sinpus/assets/images/book/{{ $history->picture_book }}" data-fancybox>
-                            <img src="/sinpus/assets/images/book/{{ $history->picture_book }}" class="img-fluid" width="80">
+                            <img src="/sinpus/assets/images/book/{{ $history->picture_book }}" class="img-fluid rounded" width="80">
                         </a>
                     </td>
                     <td>{{ $history->nm_book }}</td>

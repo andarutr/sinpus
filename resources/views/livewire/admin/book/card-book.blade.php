@@ -1,6 +1,6 @@
 <div>
     <div class="hk-pg-header mb-3">
-        <h1 class="pg-title">List Buku</h1>
+        <h1 class="pg-title">Buku</h1>
     </div>
     <button wire:click="createData" class="btn btn-outline-primary mb-4">Tambah Data</button>
     <div class="row">

@@ -35,7 +35,7 @@
     @endif
     <div class="row">
       <div class="col-lg-11 col-sm-9 col-12">
-        <table id="example" class="table table-striped table-responsive">
+        <table class="table table-striped table-responsive">
             <thead>
                 <tr>
                     <th>Kategori</th>

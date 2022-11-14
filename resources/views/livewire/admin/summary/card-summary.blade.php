@@ -27,7 +27,7 @@
         @if(session()->has('success_delete'))
           <livewire:notifications.success-delete />
           @endif
-        <table id="example" class="table table-striped table-responsive">
+        <table class="table table-striped table-responsive">
             <thead>
                 <tr>
                     <th>Foto</th>

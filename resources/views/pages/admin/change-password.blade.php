@@ -1,6 +1,6 @@
 @extends('layouts.panel')
 
-@section('title', 'Change Password User')
+@section('title', 'Change Password')
 
 @section('content')
 <div class="container-xxl">
