@@ -46,7 +46,7 @@
                 <td>{{ $book->updated_at }}</td>
                 <td>
                     <a href="/admin/book/edit/{{ $book->id_book }}" class="btn btn-sm btn-success"><i class="material-icons">edit</i></a>
-                    <button class="btn btn-sm btn-danger"><i class="material-icons" onclick="return confirm('Yakin ingin menghapus data?')" wire:click="destroy({{ $book->id_book }})">delete</i></button>
+                    <button class="btn btn-sm btn-danger"><i class="material-icons" wire:click="destroy({{ $book->id_book }})" onclick="return confirm('Yakin ingin menghapus data?') || event.stopImmediatePropagation()">delete</i></button>
                 </td>
             </tr>
             @endforeach

@@ -51,11 +51,12 @@
                     <td>
                         <a href="/kategori/{{ $category->url_category }}" class="btn btn-sm btn-primary" target="_blank"><i class="material-icons">visibility</i></a>
                         <button wire:click="getCategory({{ $category->id_category }})" class="btn btn-sm btn-success"><i class="material-icons">edit</i></button>
-                        <button wire:click="destroy({{ $category->id_category }})" class="btn btn-sm btn-danger"><i class="material-icons" onclick="return confirm('Yakin ingin menghapus data?')">delete</i></button>
+                        <button wire:click="destroy({{ $category->id_category }})" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data?') || event.stopImmediatePropagation()"><i class="material-icons">delete</i></button>
                     </td>
                 </tr>
                 @endforeach
         </table>
+        {{ $categories->links() }}
       </div>
     </div>
   </div>
