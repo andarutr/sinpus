@@ -8,7 +8,7 @@
           @elseif(session()->has('failed_change_password'))
             <livewire:notifications.failed-change-password />
           @endif
-            <livewire:user.change-password-form />
+            <livewire:user.change-password />
           </div>
         </div>
       </div>
