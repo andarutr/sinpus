@@ -10,11 +10,13 @@ use App\Http\Controllers\Admin\AProfileController;
 use App\Http\Controllers\Admin\RingkasanController;
 use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\AChangePasswordController;
 
 Route::middleware(['auth','isAdmin'])->group(function () {
     // Route
     Route::get('/admin', [DashboardController::class, 'index']);
+    Route::get('/admin/notification', [NotificationController::class, 'index']);
     Route::get('/admin/profil/edit', [AProfileController::class, 'edit']);
     Route::post('/admin/profil/edit', [AProfileController::class, 'update']);
     Route::get('/admin/change-password', [AChangePasswordController::class, 'index']);
