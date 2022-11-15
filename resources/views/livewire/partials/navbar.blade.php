@@ -5,7 +5,7 @@
                 <div class="dropdown dropdown-notifications">
                     <a href="#" class="btn btn-icon btn-rounded btn-flush-dark flush-soft-hover dropdown-toggle no-caret" data-bs-toggle="dropdown" data-dropdown-animation role="button" aria-haspopup="true" aria-expanded="false"><span class="icon"><span class="position-relative"><span class="feather-icon"><i data-feather="bell"></i></span><span class="badge badge-success badge-indicator position-top-end-overflow-1"></span></span></span></a>
                     <div class="dropdown-menu dropdown-menu-end p-0">
-                        <h6 class="dropdown-header px-4 fs-6">Notifications<a href="#" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"><span class="icon"><span class="feather-icon"><i data-feather="settings"></i></span></span></a>
+                        <h6 class="dropdown-header px-4 fs-6">Notifications<a href="@if(Auth::user()->id_role === 2){{ url('user/notification') }}@endif" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"><span class="icon"><span class="feather-icon"><i data-feather="settings"></i></span></span></a>
                         </h6>
                         <div data-simplebar class="dropdown-body  p-2">
                             @if(Auth::user()->id_role === 2)

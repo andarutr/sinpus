@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('pages.sinpus.user.notification.list');
+    }
 }

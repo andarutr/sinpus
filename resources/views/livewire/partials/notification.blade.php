@@ -19,7 +19,7 @@
             </div>
             <div class="media-body">
                 <div>
-                    <div class="notifications-text">{{ $notif->name }} {{ $notif->do_notif }} Buku {{ $notif->nm_book }}</div>
+                    <div class="notifications-text">Anda {{ $notif->do_notif }} Buku {{ $notif->nm_book }}</div>
                     <div class="notifications-primary">
                         <div class="notifications-time">{{ $notif->created_at }}</div>
                     </div>
