@@ -10,7 +10,9 @@ use App\Http\Controllers\Admin\AProfileController;
 use App\Http\Controllers\Admin\RingkasanController;
 use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AccountLevelController;
 use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\Admin\AccountRemoveController;
 use App\Http\Controllers\Admin\AChangePasswordController;
 
 Route::middleware(['auth','isAdmin'])->group(function () {
@@ -42,4 +44,8 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/admin/poinku', [PoinkuController::class, 'index']);
     Route::post('/admin/pointku/create', [PoinkuController::class, 'store']);
     Route::get('/admin/pointku/delete/{id}', [PoinkuController::class, 'destroy']);
+
+    // Akses
+    Route::get('/admin/akses/level', [AccountLevelController::class, 'index']);
+    Route::get('/admin/akses/remove', [AccountRemoveController::class, 'index']);
 });
