@@ -5,67 +5,14 @@
                 <div class="dropdown dropdown-notifications">
                     <a href="#" class="btn btn-icon btn-rounded btn-flush-dark flush-soft-hover dropdown-toggle no-caret" data-bs-toggle="dropdown" data-dropdown-animation role="button" aria-haspopup="true" aria-expanded="false"><span class="icon"><span class="position-relative"><span class="feather-icon"><i data-feather="bell"></i></span><span class="badge badge-success badge-indicator position-top-end-overflow-1"></span></span></span></a>
                     <div class="dropdown-menu dropdown-menu-end p-0">
-                        <h6 class="dropdown-header px-4 fs-6">Notifications<a href="#" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"><span class="icon"><span class="feather-icon"><i data-feather="settings"></i></span></span></a>
+                        <h6 class="dropdown-header px-4 fs-6">Notifications<a href="@if(Auth::user()->id_role === 2){{ url('user/notification') }}@endif @if(Auth::user()->id_role === 1){{ url('admin/notification') }}@endif" class="btn btn-icon btn-flush-dark btn-rounded flush-soft-hover"><span class="icon"><span class="feather-icon"><i data-feather="settings"></i></span></span></a>
                         </h6>
                         <div data-simplebar class="dropdown-body  p-2">
-                            @php
-                            $notif_pinjam = \DB::table('pinjam')
-                                            ->orderByDesc('id_pinjam')
-                                            ->join('users','pinjam.id_user','=','users.id')
-                                            ->join('books','pinjam.id_book','=','books.id_book')
-                                            ->select('pinjam.*','books.nm_book','users.name')
-                                            ->limit(5)
-                                            ->get();
-                            $notif_ringkasan = \DB::table('meringkas')
-                                                ->orderByDesc('id_meringkas')
-                                                ->join('users','meringkas.id_user','=','users.id')
-                                                ->join('books','meringkas.id_book','=','books.id_book')
-                                                ->select('meringkas.*','books.nm_book','users.name')
-                                                ->limit(5)
-                                                ->get();
-                            @endphp
-                            @foreach($notif_ringkasan as $new)
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-head">
-                                        <div class="avatar  avatar-icon avatar-sm avatar-info avatar-rounded">
-                                            <span class="initial-wrap">
-                                                <span class="feather-icon"><i data-feather="book-open"></i></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <div>
-                                            <div class="notifications-text">{{ $new->name }} telah meringkas buku {{ $new->nm_book }}</div>
-                                            <div class="notifications-info">
-                                                <div class="notifications-time">{{ $new->created_at }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            @endforeach
-                            @foreach($notif_pinjam as $new)
-                            <a href="javascript:void(0);" class="dropdown-item">
-                                <div class="media">
-                                    <div class="media-head">
-                                        <div class="avatar  avatar-icon avatar-sm avatar-primary avatar-rounded">
-                                            <span class="initial-wrap">
-                                                <span class="feather-icon"><i data-feather="user-check"></i></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <div>
-                                            <div class="notifications-text">{{ $new->name }} ingin meminjam buku {{ $new->nm_book }}</div>
-                                            <div class="notifications-info">
-                                                <div class="notifications-time">{{ $new->created_at }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            @endforeach
+                            @if(Auth::user()->id_role === 1)
+                            <livewire:partials.notification-admin />
+                            @elseif(Auth::user()->id_role === 2)
+                            <livewire:partials.notification />
+                            @endif
                             <a href="javascript:void(0);" class="dropdown-item">
                                 <div class="media">
                                     <div class="media-head">
@@ -79,7 +26,7 @@
                                         <div>
                                             <div class="notifications-text">Selamat Datang di SINPUS (Sistem Informasi Perpustakaan)</div>
                                             <div class="notifications-info">
-                                                <div class="notifications-time">Today, {{ date('d F Y')}}</div>
+                                                <div class="notifications-time">{{ now() }}</div>
                                             </div>
                                         </div>
                                     </div>

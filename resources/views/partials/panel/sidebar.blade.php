@@ -48,7 +48,7 @@
 					<li class="nav-item @if($menu == 'Edit Profile') active @endif">
 						<a class="nav-link" href="/admin/profil/edit">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">account_circle</i>
+								<i class="fa-solid fa-user"></i>
 							</span>
 							<span class="nav-link-text">Edit Profil</span>
 						</a>
@@ -56,7 +56,7 @@
 					<li class="nav-item @if($menu == 'Change Password') active @endif">
 						<a class="nav-link" href="/admin/change-password">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">lock</i>
+								<i class="fa-solid fa-unlock-keyhole"></i>
 							</span>
 							<span class="nav-link-text">Change Password</span>
 						</a>
@@ -64,7 +64,7 @@
 					<li class="nav-item @if($menu == 'Book') active @endif">
 						<a class="nav-link" href="/admin/book">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">book</i>
+								<i class="fa-solid fa-book-open-reader"></i>
 							</span>
 							<span class="nav-link-text">Book</span>
 						</a>
@@ -72,7 +72,7 @@
 					<li class="nav-item @if($menu == 'Category') active @endif">
 						<a class="nav-link" href="/admin/category">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">account_balance</i>
+								<i class="fa-solid fa-cubes"></i>
 							</span>
 							<span class="nav-link-text">Kategori</span>
 						</a>
@@ -80,7 +80,7 @@
 					<li class="nav-item @if($menu == 'Inventory') active @endif">
 						<a class="nav-link" href="/admin/inventory">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">done_all</i>
+								<i class="fa-solid fa-book"></i>
 							</span>
 							<span class="nav-link-text">Ketersediaan</span>
 						</a>
@@ -88,7 +88,7 @@
 					<li class="nav-item @if($menu == 'Ringkasan') active @endif">
 						<a class="nav-link" href="/admin/ringkasan">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">edit</i>
+								<i class="fa-solid fa-file-pen"></i>
 							</span>
 							<span class="nav-link-text">Ringkasan</span>
 						</a>
@@ -96,7 +96,7 @@
 					<li class="nav-item @if($menu == 'Poinku') active @endif">
 						<a class="nav-link" href="/admin/poinku">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">polymer</i>
+								<i class="fa-solid fa-feather-pointed"></i>
 							</span>
 							<span class="nav-link-text">Poinku</span>
 						</a>
@@ -104,7 +104,7 @@
 					<li class="nav-item @if($menu == 'History') active @endif">
 						<a class="nav-link" href="/admin/history">
 							<span class="nav-icon-wrap">
-								<i class="material-icons">history</i>
+								<i class="fa-solid fa-clock-rotate-left"></i>
 							</span>
 							<span class="nav-link-text">History</span>
 						</a>
@@ -112,6 +112,29 @@
 				</ul>
 			</div>
 			<div class="menu-gap"></div>
+			<div class="menu-group">
+				<div class="nav-header">
+					<span>Access</span>
+				</div>
+				<ul class="navbar-nav flex-column">
+					<li class="nav-item @if($menu == 'Account Level') active @endif">
+						<a class="nav-link" href="/admin/akses/level">
+							<span class="nav-icon-wrap">
+								<i class="fa-solid fa-users-gear"></i>
+							</span>
+							<span class="nav-link-text">Account Level</span>
+						</a>
+					</li>
+					<li class="nav-item @if($menu == 'Account Remove') active @endif">
+						<a class="nav-link" href="/admin/akses/remove">
+							<span class="nav-icon-wrap">
+								<i class="fa-solid fa-user-xmark"></i>
+							</span>
+							<span class="nav-link-text">Remove Account</span>
+						</a>
+					</li>
+				</ul>
+			</div>
 			@elseif(Auth::user()->id_role === 2)
 			<div class="menu-group">
 				<div class="nav-header">

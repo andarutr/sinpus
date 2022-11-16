@@ -27,6 +27,7 @@ class PengembalianBukuController extends Controller
 							->update([
 								'id_statusbuku' => 4
 							]);
+
 			$kembalikan_buku = \DB::table('kembalikan')
 								->insert([
 									'id_user' => Auth::user()->id,
@@ -35,7 +36,16 @@ class PengembalianBukuController extends Controller
 									'updated_at' => Carbon::now()->toDateTimeString(),
 									'created_at' => Carbon::now()->toDateTimeString(),
 								]);
-								
+			
+			$notification = \DB::table('notifications')
+				->insert([
+					'id_user' => Auth::user()->id,
+					'id_book' => $book->id_book,
+					'do_notif' => 'mengembalikan',
+					'updated_at' => now(),
+					'created_at' => now()
+				]);
+
 			return view('pages.sinpus.user.status.success_2');
 		}else{
 			return view('pages.sinpus.user.status.failed');

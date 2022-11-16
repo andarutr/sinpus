@@ -10,11 +10,15 @@ use App\Http\Controllers\Admin\AProfileController;
 use App\Http\Controllers\Admin\RingkasanController;
 use App\Http\Controllers\Admin\InventoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\AccountLevelController;
+use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\Admin\AccountRemoveController;
 use App\Http\Controllers\Admin\AChangePasswordController;
 
 Route::middleware(['auth','isAdmin'])->group(function () {
     // Route
     Route::get('/admin', [DashboardController::class, 'index']);
+    Route::get('/admin/notification', [NotificationController::class, 'index']);
     Route::get('/admin/profil/edit', [AProfileController::class, 'edit']);
     Route::post('/admin/profil/edit', [AProfileController::class, 'update']);
     Route::get('/admin/change-password', [AChangePasswordController::class, 'index']);
@@ -40,4 +44,8 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/admin/poinku', [PoinkuController::class, 'index']);
     Route::post('/admin/pointku/create', [PoinkuController::class, 'store']);
     Route::get('/admin/pointku/delete/{id}', [PoinkuController::class, 'destroy']);
+
+    // Akses
+    Route::get('/admin/akses/level', [AccountLevelController::class, 'index']);
+    Route::get('/admin/akses/remove', [AccountRemoveController::class, 'index']);
 });

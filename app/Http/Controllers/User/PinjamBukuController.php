@@ -22,14 +22,24 @@ class PinjamBukuController extends Controller
 							->update([
 								'id_statusbuku' => 2
 							]);
+
 			$pinjam_buku = \DB::table('pinjam')
 								->insert([
 									'id_user' => Auth::user()->id,
 									'id_book' => $book->id_book,
-									'updated_at' => Carbon::now()->toDateTimeString(),
-									'created_at' => Carbon::now()->toDateTimeString(),
+									'updated_at' => now(),
+									'created_at' => now()
 								]);
-								
+
+			$notification = \DB::table('notifications')
+								->insert([
+									'id_user' => Auth::user()->id,
+									'id_book' => $book->id_book,
+									'do_notif' => 'meminjam',
+									'updated_at' => now(),
+									'created_at' => now()
+								]);
+
 			return view('pages.sinpus.user.status.success_1');
 		}else{
 			return view('pages.sinpus.user.status.failed');
