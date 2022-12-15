@@ -10,18 +10,7 @@ class MeringkasController extends Controller
 {
 	public function index()
 	{
-		$pinjam_buku = \DB::table('pinjam')
-							->where('id_user',Auth::user()->id)
-							->join('books','books.id_book','=','pinjam.id_book')
-							->join('status_buku', 'books.id_statusbuku', '=', 'status_buku.id_statusbuku')
-							->get();
-		$edit_ringkasan = \DB::table('meringkas')
-							->where(['id_user' => Auth::user()->id])
-							->join('books','meringkas.id_book','=','books.id_book')
-							->join('status_buku', 'books.id_statusbuku', '=', 'status_buku.id_statusbuku')
-							->get();
-		
-		return view('pages.sinpus.user.meringkas.list', compact('pinjam_buku','edit_ringkasan'));
+		return view('pages.sinpus.user.meringkas.list');
 	}
 
 	public function create($url)
@@ -52,6 +41,16 @@ class MeringkasController extends Controller
 								'updated_at' => now(),
 								'created_at' => now()
 							]);
+
+			$notification = \DB::table('notifications')
+								->insert([
+									'id_user' => Auth::user()->id,
+									'id_book' => $book->id_book,
+									'do_notif' => 'meringkas',
+									'updated_at' => now(),
+									'created_at' => now()
+								]);
+
 			return 	view('pages.sinpus.user.status.success_3');
 		}else{
 			return "Incorrect";
@@ -88,6 +87,16 @@ class MeringkasController extends Controller
 								'total_kata' => \Str::length($req->ringkasan),
 								'updated_at' => now(),
 							]);
+
+			$notification = \DB::table('notifications')
+				->insert([
+					'id_user' => Auth::user()->id,
+					'id_book' => $book->id_book,
+					'do_notif' => 'memperbarui ringkasan',
+					'updated_at' => now(),
+					'created_at' => now()
+				]);
+				
 			return 	view('pages.sinpus.user.status.success_4');
 		}else{
 			return "Incorrect";

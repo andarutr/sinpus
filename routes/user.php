@@ -6,10 +6,12 @@ use App\Http\Controllers\User\HistoryController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\MeringkasController;
 use App\Http\Controllers\User\PinjamBukuController;
+use App\Http\Controllers\User\NotificationController;
 use App\Http\Controllers\User\ChangePasswordController;
 use App\Http\Controllers\User\PengembalianBukuController;
 
 Route::middleware(['auth','isUser'])->group(function () {
+    Route::get('/user/notification', [NotificationController::class, 'index']);
     Route::get('/user', function() {
         return redirect('/user/profile');
     });

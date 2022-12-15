@@ -11,15 +11,7 @@ class PoinkuController extends Controller
 	public function index()
 	{
 		$menu = 'Poinku';
-		$poinku = \DB::table('pointku')
-						->orderByDesc('id_pointku')
-						->join('users','pointku.id_user','=','users.id')
-						->join('books','pointku.id_book','=','books.id_book')
-						->join('meringkas','pointku.id_meringkas','=','meringkas.id_meringkas')
-						->select('users.name','books.picture_book','books.nm_book','pointku.*')
-						->get();
-
-		return view('pages.admin.poinku.list', compact('menu','poinku'));
+		return view('pages.admin.poinku.list', compact('menu'));
 	}
 
 	protected function store(Request $req)
@@ -31,12 +23,6 @@ class PoinkuController extends Controller
 							'id_meringkas' => $req->id_meringkas,
 							'pointku' => $req->poinku
 						]);
-		return redirect('/admin/poinku')->with('success_poinku_create','Berhasil memberikan poin ringkasan!');
-	}
-
-	protected function destroy($id)
-	{
-		$delete = \DB::table('pointku')->where('id_pointku',$id)->delete();
-		return redirect('/admin/poinku')->with('success_poinku_delete','Berhasil menghapus point!');
+		return redirect('/admin/poinku')->with('success_create','Berhasil menambahkan data!');
 	}
 }

@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('publish_from', 128);
             $table->integer('id_statusbuku');
             $table->string('url_book', 128);
+            $table->integer('quantity')->nullable();
             $table->timestamps();
         });
     }

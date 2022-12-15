@@ -9,8 +9,7 @@ class BookController extends Controller
     // Book
     public function book()
     {
-        $books = \DB::table('books')->orderByDesc('id_book')->get();
-        return view('pages.sinpus.book.all', compact('books'));
+        return view('pages.sinpus.book.all');
     }
 
     // ByCategory
@@ -22,6 +21,7 @@ class BookController extends Controller
         $books = \DB::table('books')
                     ->join('category', 'books.id_category', '=', 'category.id_category')
                     ->get();
+                    
         return view('pages.sinpus.book.category', compact('category','books'));
     }
 

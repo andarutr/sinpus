@@ -12,6 +12,7 @@
 
   <!-- Page Body -->
   <div class="hk-pg-body">
+    <a href="{{ url('admin/ringkasan') }}" class="btn btn-sm btn-success">Kembali</a>
     <div class="row edit-profile-wrap">
       <div class="col-lg-12 col-sm-9 col-12">
         <div class="tab-content">
