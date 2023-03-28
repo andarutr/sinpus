@@ -1,0 +1,37 @@
+[
+    {
+        "id_category": 1,
+        "nm_category": "Agama",
+        "url_category": "agama"
+    },
+    {
+        "id_category": 2,
+        "nm_category": "Bisnis",
+        "url_category": "bisnis"
+    },
+    {
+        "id_category": 3,
+        "nm_category": "Computer",
+        "url_category": "computer"
+    },
+    {
+        "id_category": 4,
+        "nm_category": "Fiksi",
+        "url_category": "fiksi"
+    },
+    {
+        "id_category": 5,
+        "nm_category": "Programming",
+        "url_category": "programming"
+    },
+    {
+        "id_category": 6,
+        "nm_category": "Psikologi",
+        "url_category": "psikologi"
+    },
+    {
+        "id_category": 7,
+        "nm_category": "Sejarah",
+        "url_category": "sejarah"
+    }
+]

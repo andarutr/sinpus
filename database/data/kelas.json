@@ -1,0 +1,98 @@
+[
+    {
+        "id_kelas": 1,
+        "nomor_kelas": 10,
+        "prodi_kelas": "Animasi",
+        "url_kelas": "10-animasi"
+    },
+    {
+        "id_kelas": 2,
+        "nomor_kelas": 11,
+        "prodi_kelas": "Animasi",
+        "url_kelas": "11-animasi"
+    },
+    {
+        "id_kelas": 3,
+        "nomor_kelas": 12,
+        "prodi_kelas": "Animasi",
+        "url_kelas": "12-animasi"
+    },
+    {
+        "id_kelas": 4,
+        "nomor_kelas": 10,
+        "prodi_kelas": "Akuntansi",
+        "url_kelas": "10-akuntansi"
+    },
+    {
+        "id_kelas": 5,
+        "nomor_kelas": 11,
+        "prodi_kelas": "Akuntansi",
+        "url_kelas": "11-akuntansi"
+    },
+    {
+        "id_kelas": 6,
+        "nomor_kelas": 12,
+        "prodi_kelas": "Akuntansi",
+        "url_kelas": "12-akuntansi"
+    },
+    {
+        "id_kelas": 7,
+        "nomor_kelas": 10,
+        "prodi_kelas": "Perbankan Syariah",
+        "url_kelas": "10-perbankan-syariah"
+    },
+    {
+        "id_kelas": 8,
+        "nomor_kelas": 11,
+        "prodi_kelas": "Perbankan Syariah",
+        "url_kelas": "11-perbankan-syariah"
+    },
+    {
+        "id_kelas": 9,
+        "nomor_kelas": 12,
+        "prodi_kelas": "Perbankan Syariah",
+        "url_kelas": "12-perbankan-syariah"
+    },
+    {
+        "id_kelas": 10,
+        "nomor_kelas": 10,
+        "prodi_kelas": "OTKP1",
+        "url_kelas": "10-otkp1"
+    },
+    {
+        "id_kelas": 11,
+        "nomor_kelas": 11,
+        "prodi_kelas": "OTKP1",
+        "url_kelas": "11-otkp1"
+    },
+    {
+        "id_kelas": 12,
+        "nomor_kelas": 12,
+        "prodi_kelas": "OTKP1",
+        "url_kelas": "12-otkp1"
+    },
+    {
+        "id_kelas": 13,
+        "nomor_kelas": 10,
+        "prodi_kelas": "OTKP2",
+        "url_kelas": "10-otkp2"
+    },
+    {
+        "id_kelas": 14,
+        "nomor_kelas": 11,
+        "prodi_kelas": "OTKP2",
+        "url_kelas": "11-otkp2"
+    },
+    {
+        "id_kelas": 15,
+        "nomor_kelas": 12,
+        "prodi_kelas": "OTKP2",
+        "url_kelas": "12-otkp2"
+    },
+    {
+        "id_kelas": 16,
+        "nomor_kelas": "",
+        "prodi_kelas": "None",
+        "url_kelas": "-"
+    }
+]

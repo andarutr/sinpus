@@ -1,0 +1,19 @@
+
+[
+    {
+        "id_statusbuku": 1,
+        "nm_statusbuku":"Tersedia"
+    },
+    {
+        "id_statusbuku": 2,
+        "nm_statusbuku":"Proses Peminjaman"
+    },
+    {
+        "id_statusbuku": 3,
+        "nm_statusbuku":"Terpinjam"
+    },
+    {
+        "id_statusbuku": 4,
+        "nm_statusbuku":"Proses Pengembalian"
+    }
+]

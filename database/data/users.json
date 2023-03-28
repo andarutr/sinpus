@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Si Admin",
+        "email":"admin@smkpbs2app.my.id",
+        "email_verified_at":"2022-10-19 14:44:41",
+        "password":"$2a$12$eTRZBlc1PhJEXrVnkGWPfulS0Cr3CaGp.mnQAYoChfe5jfOKsz8Li",
+        "picture":"user.jpg",
+        "phone_number":"0123456",
+        "id_kelas":"1",
+        "id_role":"1",
+        "created_at":"2022-10-10 04:14:40",
+        "updated_at":"2022-10-10 04:14:40"
+    },
+    {
+        "name":"Si User",
+        "email":"user@gmail.com",
+        "email_verified_at":"2022-11-16 11:01:37",
+        "password":"$2a$12$S7xNtE7JGz/ut/rznysaWOGo3NvoBf1kO53wwlOCjriIZuFEhiedG",
+        "picture":"user.jpg",
+        "phone_number":"0123456",
+        "id_kelas":"3",
+        "id_role":"2",
+        "created_at":"2022-11-16 10:59:54",
+        "updated_at":"2022-11-16 11:10:49"
+    }
+]

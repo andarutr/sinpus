@@ -1,0 +1,14 @@
+[
+    {
+        "id_role": 1,
+        "nm_role":"Admin"
+    },
+    {
+        "id_role": 2,
+        "nm_role":"User"
+    },
+    {
+        "id_role": 3,
+        "nm_role":"Guru"
+    }
+]
